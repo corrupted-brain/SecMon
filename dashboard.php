@@ -61,9 +61,25 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-server"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Websites Monitoring</span>
+                 <?php
+                
+                 $connection = mysqli_connect("localhost","root","","hash_analyzer");
+                 $query = "SELECT * FROM IPstatus";
+                 $query_run = mysqli_query($connection,$query);
+
+                 if($query_run)
+                 {
+                  $row = mysqli_num_rows($query_run);
+                  if($row)
+                    {
+                     // printf("Number of row in the table : " . $row);
+                    }
+                    mysqli_free_result($query_run);
+                  }
+                  ?>
+                <span class="info-box-text">Devices Monitoring</span>
                 <span class="info-box-number">
-                  10
+                  <?php echo $row; ?>
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -150,7 +166,7 @@
                // print_r($query_run);
 
                  ?>
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="file-monitoring" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Status</th>
@@ -196,7 +212,74 @@
                 </table>
               </div>
             </div>
-          </div>
+<!-- Arko table start -->
+<div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Device Monitoring</h3>
+              </div>
+<div class="card-body">
+               <?php
+                $connection= mysqli_connect("localhost","root","","hash_analyzer");
+                $query= "SELECT * FROM IPstatus";
+                $query_run= mysqli_query($connection,$query);
+                ?>
+
+
+                <table id="device-monitoring" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Device Name</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                    <?php
+                    if(mysqli_num_rows($query_run)> 0)
+                    {
+                      while($row = mysqli_fetch_assoc($query_run))
+                      {
+                       ?>
+                  <tr>
+                    <td> <?php echo $row['ip_addr'];?> </td>
+                    <?php $status=$row['status'];
+
+                     if($status=='up'){
+         echo "<td class='table-success'>"."System Up"."</td>"; }
+        else
+   
+         echo "<td class='table-danger'>"."System Down"."</td>";; 
+
+                    ?>
+                    <td> <?php echo $row['device_name'];?> </td>
+                    <td> <?php echo $row['date'];?> </td>
+                  </tr>
+                  <?php
+
+                      }
+                    }
+                    else {
+                      echo "No record found!";
+                    }
+                    ?>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+
+<!-- arko table finish -->
+</section>
+</div>
+</div>
+</div>
           
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
@@ -227,6 +310,17 @@
 
 <!-- PAGE SCRIPTS -->
 <script src="dist/js/pages/dashboard2.js"></script>
+
+     <script type="text/javascript">
+    setInterval(
+      function(){
+        $.getJSON("IPstatus/check.php",function(e){
+          document.getElementById("check").innerHTML=e.Check;
+        })
+        $('#table_id').DataTable().ajax.reload();
+      },60000); //60000 Millisecond = 1 minute
+  </script>
+
 <script>
   $(function () {
     $("#example1").DataTable({
