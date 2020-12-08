@@ -32,7 +32,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>User Management</h1>
+            <h1>Website Monitoring</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -55,67 +55,46 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Users</h3>
+                <div class="card-body">
+
                 <?php
-                if (isset($_SESSION['success']) && $_SESSION['success'] !='')
-                {
-                  echo '<h2>'.$_SESSION['success'].'</h2>';
-                  unset($_SESSION['success']);
-                }
-                   if (isset($_SESSION['status']) && $_SESSION['status'] !='')
-                {
-                  echo '<h2>'.$_SESSION['status'].'</h2>';
-                  unset($_SESSION['status']);
-                }
+                $connection= mysqli_connect("localhost","root","","hash_analyzer");
+                $query= "SELECT * FROM Deface";
+                $query_run= mysqli_query($connection,$query);
                 ?>
 
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
 
-                  <?php
-                  $connection= mysqli_connect("localhost","root","","hash_analyzer");
-                  $query= "SELECT * FROM users";
-                  $query_run= mysqli_query($connection,$query);
-
-                  ?>
-                <table class="table table-head-fixed text-nowrap">
+                <table id="example2" class="table table-bordered table-striped">
                   <thead>
-                    <tr>
-                      <th>ID</th>
-                      <th>Name</th>
-                      <th>E-mail</th>
-                      <th>Password</th>
-                      <th>Edit</th>
-                      <th>Delete</th>
-                    </tr>
+                  <tr>
+                    <th>Website</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                  </tr>
                   </thead>
                   <tbody>
-                   <?php
+                    <?php
                     if(mysqli_num_rows($query_run)> 0)
                     {
                       while($row = mysqli_fetch_assoc($query_run))
                       {
                        ?>
+                  <tr>
+                    <td> <?php echo $row['website'];?> </td>
+                    <?php $status=$row['status'];
 
-                    <tr>
-                       <td> <?php echo $row['id'];?> </td>
-                       <td> <?php echo $row['name'];?> </td>
-                       <td> <?php echo $row['email'];?> </td>
-                       <td> <?php echo $row['password'];?> </td>
-                       <td>
-                         <form action="registeredit.php" method="POST">
-                           <input type="hidden" name="edit_id" value=" <?php echo $row['id'];?> ">
-                           <button type="submit" name="edit_btn" class="btn btn-success" >Edit</button>
-                         </form>
-                       </td>
-                       <td>
-                        <form action="code.php" method="POST">
-                        <input type="hidden" name="delete_id" value="<?php echo $row['id'];?> ">
-                        <button type="submit" name="delete_btn" class="btn btn-danger">Delete</button>
-                        </form>
-                       </td>
-                      
-                    </tr>
-                    <?php
+                     if($status=='fine'){
+         echo "<td class='table-success'>"."Website is fine."."</td>"; }
+        else
+   
+         echo "<td class='table-danger'>"."Website might be defaced."."</td>";; 
+
+                    ?>
+                    <td> <?php echo $row['remark'];?> </td>
+                    <td> <?php echo $row['date'];?> </td>
+                  </tr>
+                  <?php
 
                       }
                     }
@@ -123,15 +102,22 @@
                       echo "No record found!";
                     }
                     ?>
-
                   </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                  </tr>
+                  </tfoot>
                 </table>
+              </div>
+            </div>
+                
+
 
               </div>
-
-
-
-
 
 
               <!-- /.card-body -->

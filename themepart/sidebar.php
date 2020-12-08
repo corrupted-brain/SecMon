@@ -32,6 +32,23 @@
               </p>
             </a>
           </li> 
+          <li class="nav-header">Menu</li>
+          <li class="nav-item has-treeview">
+            <a href="webmon.php" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                Deface Monitor
+                <i class=""></i>
+              </p>
+            </a>
+             <li class="nav-item has-treeview">
+            <a href="webmon.php" class="nav-link">
+              <i class="nav-icon fas fa-book"></i>
+              <p>
+                IP Monitor
+                <i class=""></i>
+              </p>
+            </a>
           <li class="nav-header">Management</li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

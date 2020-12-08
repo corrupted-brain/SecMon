@@ -8,8 +8,8 @@ if(isset($_POST['registerbtn']))
 {
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
-    $cpassword = $_POST['confirmpassword'];
+    $password = sha1($_POST['password']);
+    $cpassword = sha1($_POST['confirmpassword']);
 
     $email_query = "SELECT * FROM users WHERE email='$email' ";
     $email_query_run = mysqli_query($connection, $email_query);
@@ -22,6 +22,7 @@ if(isset($_POST['registerbtn']))
     else
     {
         if($password === $cpassword)
+
         {
             $query = "INSERT INTO users (name,email,password) VALUES ('$name','$email','$password')";
             $query_run = mysqli_query($connection, $query);
@@ -98,7 +99,7 @@ if(isset($_POST['delete_btn']))
 if(isset($_POST['login_btn']))
 {
     $email_login = $_POST['email'];
-    $password_login = $_POST['password'];
+    $password_login = sha1($_POST['password']);
 
     $query = "SELECT * FROM users WHERE email='$email_login' AND password='$password_login' ";
     $query_run = mysqli_query($connection,$query);
@@ -111,7 +112,7 @@ if(isset($_POST['login_btn']))
     else
     {
         $_SESSION['status']= "Either email or password is invalid.";
-        header('Location: /superscan/admin');
+        header('Location: /SecMon/');
     }
 }
 

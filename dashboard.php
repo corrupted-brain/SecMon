@@ -92,8 +92,24 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-exclamation-triangle"></i></span>
 
               <div class="info-box-content">
+                 <?php
+                
+                 $connection = mysqli_connect("localhost","root","","hash_analyzer");
+                 $query = "SELECT * FROM Deface where status='defaced'";
+                 $query_run = mysqli_query($connection,$query);
+
+                 if($query_run)
+                 {
+                  $def = mysqli_num_rows($query_run);
+                  if($def)
+                    {
+                    // printf("Number of row in the table : " . $row);
+                    }
+                    mysqli_free_result($query_run);
+                  }
+                  ?>
                 <span class="info-box-text">Sites Attacked</span>
-                <span class="info-box-number">41,410</span>
+                <span class="info-box-number"><?php echo $def; ?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -166,7 +182,7 @@
                // print_r($query_run);
 
                  ?>
-                <table id="file-monitoring" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Status</th>
@@ -225,7 +241,7 @@
                 ?>
 
 
-                <table id="device-monitoring" class="table table-bordered table-striped">
+                <table id="example2" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>IP Address</th>
@@ -279,7 +295,9 @@
 </section>
 </div>
 </div>
+
 </div>
+<?php include 'themepart/footer.php'; ?>
           
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
@@ -323,10 +341,7 @@
 
 <script>
   $(function () {
-    $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
+    $("#example1").DataTable();
     $('#example2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -334,7 +349,6 @@
       "ordering": true,
       "info": true,
       "autoWidth": false,
-      "responsive": true,
     });
   });
 </script>

@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
-$ipArr=array("192.168.1.1","192.168.1.99","192.168.1.5","192.168.1.10","192.168.1.2","192.168.1.66","192.168.1.4","192.168.1.200");
+$ipArr=array("192.168.1.1","192.168.1.99","192.168.1.204","192.168.1.10","192.168.1.66","192.168.1.4","192.168.1.250");
 
         function myOS(){
             if (strtoupper(substr(PHP_OS, 0, 3)) === (chr(87).chr(73).chr(78)))
