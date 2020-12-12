@@ -3,7 +3,6 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
-$ipArr=array("192.168.1.1","192.168.1.99","192.168.1.204","192.168.1.10","192.168.1.66","192.168.1.4","192.168.1.250");
 
         function myOS(){
             if (strtoupper(substr(PHP_OS, 0, 3)) === (chr(87).chr(73).chr(78)))
@@ -23,24 +22,30 @@ $ipArr=array("192.168.1.1","192.168.1.99","192.168.1.204","192.168.1.10","192.16
 
             return false;
         }
-        foreach ($ipArr as $ip)
+
+$sql = "SELECT ip_addr, device_name FROM IPstatus_config ORDER BY id";
+$result = mysqli_query($connection, $sql);
+while($row = mysqli_fetch_assoc($result))
+{
+ $ip_addr = $row['ip_addr'];
+ $device_name = $row['device_name'];
+
+        foreach ($row as $ip)
         {
-        	# code... 
 
     if (ping($ip)){
-        //echo nl2br("The device exists \n");
         $status = "Up";
     //$query = "UPDATE IPstatus SET ip_addr = '$ip', status='$status' WHERE id='$id' ";
-                $query = "INSERT INTO IPstatus (ip_addr,status) VALUES ('$ip','$status')";
+                $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','$status','$device_name')";
     $query_run = mysqli_query($connection,$query); 
 }
     else 
     {
-        //echo nl2br("The device is not connected \n");
         $status = "Down";
           // $query = "UPDATE IPstatus SET ip_addr = '$ip', status='$status' WHERE id='$id' ";
-             $query = "INSERT INTO IPstatus (ip_addr,status) VALUES ('$ip','$status')";
+             $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','$status','$device_name')";
     $query_run = mysqli_query($connection,$query); 
+}
 }
 }
 echo "{\"Check\":\"Mate\"}";

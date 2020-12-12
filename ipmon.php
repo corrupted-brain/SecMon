@@ -32,7 +32,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Website Monitoring</h1>
+            <h1>IP Address Monitoring</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -40,8 +40,6 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-
 
         <!-- /.row -->
         <div class="row">
@@ -50,20 +48,20 @@
               <div class="card-header">
                 <h3 class="card-title"></h3>
                 <div class="card-body">
+               <?php
 
-                <?php
                 $connection= mysqli_connect("localhost","root","","hash_analyzer");
-                $query= "SELECT * FROM Deface";
+                $query= "SELECT * FROM IPstatus";
                 $query_run= mysqli_query($connection,$query);
                 ?>
 
 
-                <table id="example2" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Website</th>
+                    <th>IP Address</th>
                     <th>Status</th>
-                    <th>Description</th>
+                    <th>Device Name</th>
                     <th>Date</th>
                   </tr>
                   </thead>
@@ -75,17 +73,17 @@
                       {
                        ?>
                   <tr>
-                    <td> <?php echo $row['website'];?> </td>
+                    <td> <?php echo $row['ip_addr'];?> </td>
                     <?php $status=$row['status'];
 
-                     if($status=='fine'){
-         echo "<td class='table-success'>"."Website is fine."."</td>"; }
+                     if($status=='up'){
+         echo "<td class='table-success'>"."System Up"."</td>"; }
         else
    
-         echo "<td class='table-danger'>"."Website might be defaced."."</td>";; 
+         echo "<td class='table-danger'>"."System Down"."</td>";; 
 
                     ?>
-                    <td> <?php echo $row['remark'];?> </td>
+                    <td> <?php echo $row['device_name'];?> </td>
                     <td> <?php echo $row['date'];?> </td>
                   </tr>
                   <?php
@@ -101,7 +99,7 @@
                   <tr>
                     <th>IP Address</th>
                     <th>Status</th>
-                    <th>Description</th>
+                     <th>Device Name</th>
                     <th>Date</th>
                   </tr>
                   </tfoot>
@@ -121,10 +119,11 @@
         </div>
 
         <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
-
+</div>
   <!-- /.content-wrapper -->
 <?php include 'themepart/footer.php'; ?>
 
@@ -133,6 +132,7 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
@@ -169,5 +169,30 @@
 <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
 <!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
+
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard2.js"></script>
+<script type="text/javascript">
+    setInterval(
+      function(){
+        $.getJSON("IPstatus/check.php",function(e){
+          document.getElementById("check").innerHTML=e.Check;
+        })
+        $('#table_id').DataTable().ajax.reload();
+      },60000); //60000 Millisecond = 1 minute
+  </script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+    });
+  });
+</script>
 </body>
 </html>

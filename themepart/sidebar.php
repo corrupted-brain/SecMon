@@ -42,7 +42,7 @@
               </p>
             </a>
              <li class="nav-item has-treeview">
-            <a href="webmon.php" class="nav-link">
+            <a href="ipmon.php" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>
                 IP Monitor
