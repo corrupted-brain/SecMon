@@ -116,6 +116,28 @@ if(isset($_POST['login_btn']))
     }
 }
 
+#Insert IP monitor setting Data
+if(isset($_POST['insertdata']))
+{
+    $ipaddress = $_POST["ipaddress"];
+    $devicename = $_POST["devicename"];
+
+    $query = "INSERT INTO IPstatus_config (ip_addr,device_name) VALUES ('$ipaddress','$devicename')";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "Success";
+        header('Location: dashboard.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: dashboard.php');
+    }
+}
+
+
 # Signout from dashboard
 
 if(isset($_POST['logout_btn']))
