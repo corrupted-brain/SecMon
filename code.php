@@ -60,7 +60,7 @@ if(isset($_POST['updatebtn']))
     $email = $_POST['edit_email'];
     $password = $_POST['edit_password'];
 
-    $query = "UPDATE users SET name='$name', email='$email', password='$password' WHERE id='$id' ";
+    $query = "UPDATE users SET name='$name', email='$email', password='$password WHERE id='$id' ";
     $query_run = mysqli_query($connection,$query); 
 
     if($query_run)
