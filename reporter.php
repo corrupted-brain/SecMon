@@ -1,7 +1,7 @@
 <?php
 
 // 	CONFIGURE
-
+$connect = mysqli_connect("localhost","root","","hash_analyzer");
 //	SET Report Output
 //	Output to e-mail addresses and/or to STDOUT (monitor)
 

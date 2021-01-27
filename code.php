@@ -128,16 +128,126 @@ if(isset($_POST['insertdata']))
     if($query_run)
     {
         echo "Success";
-        header('Location: dashboard.php');
+        header('Location: ipmon_sett.php');
     }
     else
     {
         echo "Failed";
-        header('Location: dashboard.php');
+        header('Location: ipmon_sett.php');
     }
 }
 
 
+#Update IP monitor setting Data
+if(isset($_POST['updatedata']))
+{
+    $id = $_POST["id"];
+    $ipaddress = $_POST["ipaddress"];
+    $devicename = $_POST["devicename"];
+
+    $query = "UPDATE IPstatus_config SET ip_addr='$ipaddress', device_name='$devicename' WHERE id='$id'";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "<script>alert(1)</script>";
+        header('Location: ipmon_sett.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: ipmon_sett.php');
+    }
+}
+
+#Delete IP monitor setting Data
+if(isset($_POST['deletedata']))
+{
+    $id = $_POST["delete_id"];
+
+    $query = "DELETE FROM IPstatus_config WHERE `id`='$id'";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "<script>alert(1)</script>";
+        header('Location: ipmon_sett.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: ipmon_sett.php');
+    }
+}
+
+
+#Insert Webpage monitor setting Data
+if(isset($_POST['insertwebdata']))
+{
+    $website = $_POST["website"];
+    $description = $_POST["description"];
+    $email = $_POST["email"];
+    $contact = $_POST["contact"];
+
+    $query = "INSERT INTO deface_config (website,description,email,contact) VALUES ('$website','$description','$email','contact')";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "Success";
+        header('Location: defacemon_sett.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: defacemon_sett.php');
+    }
+}
+
+
+#Update Webpage monitor setting Data
+if(isset($_POST['updatewebdata']))
+{
+    $id = $_POST["id"];
+    $website = $_POST["website"];
+    $description = $_POST["description"];
+    $email = $_POST["email"];
+    $contact = $_POST["contact"];
+
+    $query = "UPDATE deface_config SET website='$website', description='$description', email='$email', contact='$contact' WHERE id='$id'";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "Success";
+        header('Location: defacemon_sett.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: defacemon_sett.php');
+    }
+}
+
+#Delete Webpage monitor setting Data
+if(isset($_POST['deletewebdata']))
+{
+    $id = $_POST["delete_id"];
+
+    $query = "DELETE FROM deface_config WHERE `id`='$id'";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "<script>alert(1)</script>";
+        header('Location: defacemon_sett.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: defacemon_sett.php');
+    }
+}
 # Signout from dashboard
 
 if(isset($_POST['logout_btn']))

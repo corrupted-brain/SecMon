@@ -81,9 +81,9 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Name</th>
+                      <th>User's Name</th>
                       <th>E-mail</th>
-                      <th>Password</th>
+                     <!-- <th>Password</th>-->
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
@@ -100,7 +100,7 @@
                        <td> <?php echo $row['id'];?> </td>
                        <td> <?php echo $row['name'];?> </td>
                        <td> <?php echo $row['email'];?> </td>
-                       <td> <?php echo $row['password'];?> </td>
+                       <!--<td> <?php echo $row['password'];?> </td>-->
                        <td>
                          <form action="registeredit.php" method="POST">
                            <input type="hidden" name="edit_id" value=" <?php echo $row['id'];?> ">

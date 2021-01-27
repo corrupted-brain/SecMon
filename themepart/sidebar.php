@@ -15,7 +15,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Kailash Bohara</a>
+          <a href="#" class="d-block">kailash</a>
         </div>
       </div>
 
@@ -35,18 +35,16 @@
           <li class="nav-header">Menu</li>
           <li class="nav-item has-treeview">
             <a href="webmon.php" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="nav-icon fa fa-exclamation-triangle"></i>
               <p>
                 Deface Monitor
-                <i class=""></i>
               </p>
             </a>
              <li class="nav-item has-treeview">
             <a href="ipmon.php" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="nav-icon fa fa-desktop"></i>
               <p>
                 IP Monitor
-                <i class=""></i>
               </p>
             </a>
           <li class="nav-header">Management</li>
@@ -71,17 +69,11 @@
                   <p>Edit User</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/mailbox/read-mail.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Read</p>
-                </a>
-              </li>
             </ul>
           </li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+              <i class="nav-icon fa fa-cog"></i>
               <p>
                 Configuration
                 <i class="fas fa-angle-left right"></i>
@@ -89,16 +81,16 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/examples/invoice.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>File Monitor Setting</p>
+                <a href="defacemon_sett.php" class="nav-link">
+                  <i class="fa fa-exclamation-triangle"></i>
+                  <p> Deface Monitor Setting</p>
                 </a>
               </li>
             </ul>
-                        <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="ipmon_sett.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="fa fa-desktop" aria-hidden="true"></i>
                   <p>IP Monitor Setting</p>
                 </a>
               </li>

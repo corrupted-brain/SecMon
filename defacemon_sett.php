@@ -35,7 +35,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <h1>IP Monitor Setting</h1>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addIPModal">ADD New IP Address</button>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addURLModal">ADD New Webpage</button>
                             <!-- <a href="#addIPModal" class="btn btn-success" data-toggle="modal"><i class="material-icons"></i> <span>Add New IP Address</span></a>-->
                         </div>
                     </div>
@@ -59,19 +59,20 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">Monitoring Address</h3>
+                                    <h3 class="card-title">Monitoring Websites</h3>
                                     <?php if (isset($_SESSION[ 'success']) && $_SESSION[ 'success'] !='' ) { echo '<h2>' . $_SESSION[ 'success'] . '</h2>'; unset($_SESSION[ 'success']); } if (isset($_SESSION[ 'status']) && $_SESSION[ 'status'] !='' ) { echo '<h2>' . $_SESSION[ 'status'] . '</h2>'; unset($_SESSION[ 'status']); } ?>
 
                                     <!-- /.card-header -->
                                     <div class="card-body table-responsive p-0" style="height: 400px;">
 
-                                        <?php $connection=mysqli_connect( "localhost", "root", "", "hash_analyzer"); $query="SELECT * FROM IPstatus_config" ; $query_run=mysqli_query($connection, $query); ?>
+                                        <?php $connection=mysqli_connect( "localhost", "root", "", "hash_analyzer"); $query="SELECT * FROM deface_config" ; $query_run=mysqli_query($connection, $query); ?>
                                         <table class="table table-head-fixed text-nowrap">
                                             <thead>
                                                 <tr>
                                                     <th>ID</th>
-                                                    <th>IP Address</th>
-                                                    <th>Device Name</th>
+                                                    <th>Webpage</th>
+                                                    <th>Description</th>
+                                                    <th>Email</th>
                                                     <th>Edit</th>
                                                     <th>Delete</th>
                                                 </tr>
@@ -83,16 +84,18 @@
                                                     <td>
                                                         <?php echo $row[ 'id']; ?> </td>
                                                     <td>
-                                                        <?php echo $row[ 'ip_addr']; ?> </td>
+                                                        <?php echo $row[ 'website']; ?> </td>
                                                     <td>
-                                                        <?php echo $row[ 'device_name']; ?> </td>
+                                                        <?php echo $row[ 'description']; ?> </td>
+                                                        <td>
+                                                        <?php echo $row[ 'email']; ?> </td>
 
                                                     <td>
                                                         <!--<a href="#editIPModal" class="btn btn-success editbtn" data-toggle="modal">Edit</a>-->
-                                                        <button type="button" class="btn btn-success editbtn" data-toggle="modal" data-target="#editIPModal">Edit</button>
+                                                        <button type="button" class="btn btn-success editbtnweb" data-toggle="modal" data-target="#editURLModal">Edit</button>
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger deletebtn" data-toggle="modal" data-target="#deleteIPModal">Delete</button>
+                                                        <button type="button" class="btn btn-danger deletebtnweb" data-toggle="modal" data-target="#deleteURLModal">Delete</button>
                                                     </td>
 
                                                 </tr>
@@ -111,82 +114,99 @@
         </div>
 
         <!-- Add Modal HTML -->
-        <div id="addIPModal" class="modal fade">
+        <div id="addURLModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="code.php" method="POST">
                         <div class="modal-header">
-                            <h4 class="modal-title">Add IP Address</h4>
+                            <h4 class="modal-title">Add Webpage</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
 
                         <div class="modal-body">
                             <div class="form-group">
-                                <label>IP Address</label>
-                                <input type="text" name="ipaddress" class="form-control" required>
+                                <label>Webpage</label>
+                                <input type="text" name="website" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Device Name</label>
-                                <input type="text" name="devicename" class="form-control" required>
+                                <label>Description</label>
+                                <input type="text" name="description" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" name="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact</label>
+                                <input type="text" name="contact" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" name="insertdata" class="btn btn-success" value="Add">
+                            <input type="submit" name="insertwebdata" class="btn btn-success" value="Add">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- Edit Modal HTML -->
-        <div class="modal fade" id="editIPModal">
+        <div id="editURLModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="code.php" method="POST">
                         <div class="modal-header">
-                            <h4 class="modal-title">Edit IP Address</h4>
+                            <h4 class="modal-title">Edit Webpage</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         </div>
+
                         <div class="modal-body">
-                        	  <div class="form-group">
+                            <div class="form-group">
                                 <input type="hidden" name="id" id="id">
                             </div>
                             <div class="form-group">
-                                <label>IP Address</label>
-                                <input type="text" name="ipaddress" id="ip_addr" class="form-control" required>
+                                <label>Webpage</label>
+                                <input type="text" name="website" id="website" class="form-control" required>
                             </div>
                             <div class="form-group">
-                                <label>Device Name</label>
-                                <input type="text" name="devicename" id="device_name" class="form-control" required>
+                                <label>Description</label>
+                                <input type="text" name="description" id="description" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="text" name="email" id="email" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Contact</label>
+                                <input type="text" name="contact" id="contact" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" name="updatedata" class="btn btn-info" value="Update">
+                            <input type="submit" name="updatewebdata" class="btn btn-success" value="Update">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
         <!-- Delete Modal HTML -->
-        <div id="deleteIPModal" class="modal fade">
+        <div id="deleteURLModal" class="modal fade">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="code.php" method="POST">
                         <div class="modal-body">
                             <div class="modal-header">
-                                <h4 class="modal-title">Delete IP Address</h4>
+                                <h4 class="modal-title">Delete Webpage</h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                             </div>
                             <div class="modal-body">
-                            	<input type="hidden" name="delete_id" id="delete_id">
-                                <p>Are you sure you want to delete the IP?</p>
+                                <input type="hidden" name="delete_id" id="delete_id">
+                                <p>Are you sure you want to delete the website?</p>
                                 <p class="text-danger"><small>This action cannot be undone.</small>
                                 </p>
                             </div>
                             <div class="modal-footer">
                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                <input type="submit" name="deletedata" class="btn btn-danger" value="Delete">
+                                <input type="submit" name="deletewebdata" class="btn btn-danger" value="Delete">
                             </div>
                     </form>
                     </div>
@@ -200,8 +220,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
-            $('.editbtn').on('click', function() {
-                $('#editIPModal').modal('show');
+            $('.editbtnweb').on('click', function() {
+                $('#editURLModal').modal('show');
                 $tr = $(this).closest('tr');
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
@@ -209,16 +229,18 @@
                 console.log(data);
 
                 $('#id').val(data[0]);
-                $('#ip_addr').val(data[1]);
-                $('#device_name').val(data[2]);
+                $('#website').val(data[1]);
+                $('#description').val(data[2]);
+                $('#email').val(data[3]);
+                $('#contact').val(data[4]);
 
             });
         });
     </script>
     <script>
         $(document).ready(function() {
-            $('.deletebtn').on('click', function() {
-                $('#deleteIPModal').modal('show');
+            $('.deletebtnweb').on('click', function() {
+                $('#deleteURLModal').modal('show');
                 $tr = $(this).closest('tr');
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
