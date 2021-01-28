@@ -58,7 +58,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="register.php" class="nav-link">
+                <a href="#addIPModal" data-toggle="modal" data-target="#addIPModal" class="nav-link">
                   <i class="far fas fa-user-plus"></i>
                   <p> Add User</p>
                 </a>
@@ -103,3 +103,54 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+  <!-- user register menu--->
+  <div id="addIPModal" class="modal fade">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <form action="code.php" method="POST">
+            <div class="modal-header">
+               <h4 class="modal-title">Add New User</h4>
+               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+               <div class="input-group mb-3">
+                  <input type="text" class="form-control" name="name" placeholder="Full name">
+                  <div class="input-group-append">
+                     <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <input type="email" class="form-control" name="email" placeholder="Email">
+                  <div class="input-group-append">
+                     <div class="input-group-text">
+                        <span class="fas fa-envelope"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+                  <div class="input-group-append">
+                     <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="input-group mb-3">
+                  <input type="password" class="form-control" name="confirmpassword" placeholder="Retype password">
+                  <div class="input-group-append">
+                     <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="modal-footer">
+               <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+               <input type="submit" name="insertuserdata" class="btn btn-success" value="Add">
+            </div>
+         </form>
+      </div>
+   </div>
+</div>

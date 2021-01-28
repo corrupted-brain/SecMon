@@ -4,7 +4,7 @@ include('security.php');
 
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
 
-if(isset($_POST['registerbtn']))
+if(isset($_POST['insertuserdata']))
 {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -17,7 +17,7 @@ if(isset($_POST['registerbtn']))
     {
         $_SESSION['status'] = "Email Already Taken. Please Try Another one.";
         $_SESSION['status_code'] = "error";
-        header('Location: register.php');  
+        header('Location: useredit.php');  
     }
     else
     {
@@ -32,13 +32,13 @@ if(isset($_POST['registerbtn']))
                 //echo "Saved";
                 $_SESSION['status'] = "Admin Profile Added";
                 $_SESSION['status_code'] = "success";
-                header('Location: register.php');
+                header('Location: useredit.php');
             }
             else 
             {
                 $_SESSION['status'] = "Admin Profile Not Added";
                 $_SESSION['status_code'] = "error";
-                header('Location: register.php');  
+                header('Location: useredit.php');  
             }
         }
         else 
@@ -53,14 +53,15 @@ if(isset($_POST['registerbtn']))
 
 # Useredit file update start
 
-if(isset($_POST['updatebtn']))
+if(isset($_POST['updateuserdata']))
 {
-    $id = $_POST['edit_id'];
-    $name = $_POST['edit_name'];
-    $email = $_POST['edit_email'];
-    $password = $_POST['edit_password'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = sha1($_POST['password']);
+    $password = sha1($_POST['password']);
 
-    $query = "UPDATE users SET name='$name', email='$email', password='$password WHERE id='$id' ";
+    $query = "UPDATE users SET name='$name', email='$email', password='$password' WHERE id='$id' ";
     $query_run = mysqli_query($connection,$query); 
 
     if($query_run)
@@ -76,7 +77,7 @@ if(isset($_POST['updatebtn']))
 }
 # USer Delete function starts here..
 
-if(isset($_POST['delete_btn']))
+if(isset($_POST['deleteuserdata']))
 {
     $id =  $_POST['delete_id'];
     $query = "DELETE FROM users WHERE id='$id' ";
@@ -84,7 +85,7 @@ if(isset($_POST['delete_btn']))
 
     if($query_run)
     {
-        $_SESSION['success'] = "User Deleted.";
+        $_SESSION['success'] = "<script>alert(\"User Deleted Successfully\")</script>";
         header('Location: useredit.php');
     }
     else
