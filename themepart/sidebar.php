@@ -1,4 +1,8 @@
-
+<html>
+<head>
+  <?php include 'database/dbconfig.php';
+?>
+</head>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
@@ -14,8 +18,14 @@
         <div class="image">
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
+        <?php
+        $connection = mysqli_connect("localhost","root","","hash_analyzer");
+        $query= "SELECT * FROM filehash_config";
+        $query_run= mysqli_query($connection,$query);
+        $row = mysqli_fetch_assoc($query_run);
+        ?>
         <div class="info">
-          <a href="#" class="d-block">kailash</a>
+          <a href="#" class="d-block"><?php echo $row['account']; ?></a>
         </div>
       </div>
 
@@ -58,7 +68,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#addIPModal" data-toggle="modal" data-target="#addIPModal" class="nav-link">
+                <a href="#addUserModal" data-toggle="modal" data-target="#addUserModal" class="nav-link">
                   <i class="far fas fa-user-plus"></i>
                   <p> Add User</p>
                 </a>
@@ -104,7 +114,7 @@
     <!-- /.sidebar -->
   </aside>
   <!-- user register menu--->
-  <div id="addIPModal" class="modal fade">
+  <div id="addUserModal" class="modal fade">
    <div class="modal-dialog">
       <div class="modal-content">
          <form action="code.php" method="POST">
@@ -154,3 +164,32 @@
       </div>
    </div>
 </div>
+<!-- REQUIRED SCRIPTS -->
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- DataTables -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="dist/js/demo.js"></script>
+
+<!-- PAGE PLUGINS -->
+<!-- jQuery Mapael -->
+<script src="plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="plugins/raphael/raphael.min.js"></script>
+<script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
+<script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard2.js"></script>

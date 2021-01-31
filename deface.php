@@ -13,8 +13,8 @@ $connection = mysqli_connect("localhost","root","","hash_analyzer");
 			'uniglobecollege.edu.np/index1.php'
 		); */
 
-$pattern = '/(?i:Hacked|hack|breached|Fucked|Greetz|haxor|zindabaad)/';
-
+//$pattern = '/(?i:Hacked|hack|breached|Fucked|Greetz|haxor|zindabaad)/';
+$pattern = '/(?i:hacked by|doxed by|hacked|greetz to|greetz|greets to|greets|defaced by|defaced|owned by|owned|rooted by|r00t|w00t|w007|r007|injected by|doxed|hacker|1337|leet|pwned|zindabaad|haxor|fucked|breached|cyber army|hacker crew|hacker crewz|we are anonymous|security is just illusion)/';
 function callURL($url){
 	
 	global $pattern;
@@ -45,12 +45,12 @@ function callURL($url){
 ?>
 <pre>
 	<?php
-	$sql = "SELECT website, remark FROM Deface_config ORDER BY id";
+	$sql = "SELECT website, description FROM deface_config ORDER BY id";
 	$result = mysqli_query($connection, $sql);
 	while($row = mysqli_fetch_assoc($result))
 	{
 		$ip_addr = $row['website'];
-		$remark = $row['remark'];
+		$remark = $row['description'];
 		foreach($row as $url){
 			if(!empty(callURL($url))){
 				if(preg_match($pattern, callURL($url))){

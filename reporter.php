@@ -1,7 +1,11 @@
 <?php
 
 // 	CONFIGURE
-$connect = mysqli_connect("localhost","root","","hash_analyzer");
+$connection = mysqli_connect("localhost","root","","hash_analyzer");
+$query= "SELECT * FROM filehash_config";
+$query_run= mysqli_query($connection,$query);
+$row = mysqli_fetch_assoc($query_run);
+        
 //	SET Report Output
 //	Output to e-mail addresses and/or to STDOUT (monitor)
 
@@ -10,7 +14,8 @@ $connect = mysqli_connect("localhost","root","","hash_analyzer");
 $email_out = true;
 
 //	E-mail addresses to send report of change
-$addresses = array("kailashbohara0x00@gmail.com");
+//$addresses = array("kailashbohara0x00@gmail.com");
+$addresses = array($row['account']); 
 
 //	Output to monitor (true or false)
 //		Recommend true for testing and false for CRON
@@ -41,7 +46,7 @@ $report .= "SuperScan log report for $acct file changes since ".$yesterday.":\r\
 // 	use define statements or enter values directly in the mysqli_connect
 include('config.php');
 
-$results = mysqli_query($connect,"SELECT time_stamp, file_status, file_path, file_last_mod FROM file_history WHERE acct = '$acct' AND time_stamp > '$yesterday'");
+$results = mysqli_query($connection,"SELECT time_stamp, file_status, file_path, file_last_mod FROM file_history WHERE acct = '$acct' AND time_stamp > '$yesterday'");
 if (!$results)
 {
 	$report .="No log entries available!\r\n ";
@@ -62,5 +67,5 @@ if ($email_out)
 // To TEST this script, activate the following line on
 if ($report_out) echo nl2br($report);
 
-mysqli_close($connect);
+mysqli_close($connection);
 ?>
