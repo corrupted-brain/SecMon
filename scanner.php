@@ -4,7 +4,7 @@ require('configure.php');
 require('config.php');
 
 //	Clear and title the report variable before starting
-$report = "SuperScan File Check for $acct\r\n\r\n";
+$report = "SecMon File Check for $acct\r\n\r\n";
 
 //	Initialize the baseline array for the baseline table
 $baseline = array();

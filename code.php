@@ -4,6 +4,10 @@ include('security.php');
 
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
 
+//$whiteSpace = '\s';  //if you dnt even want to allow white-space set it to ''
+//$pattern = '/[^a-zA-Z0-9'  . $whiteSpace . ']/u';
+
+
 if(isset($_POST['insertuserdata']))
 {
     $name = $_POST['name'];
@@ -122,6 +126,7 @@ if(isset($_POST['insertdata']))
 {
     $ipaddress = $_POST["ipaddress"];
     $devicename = $_POST["devicename"];
+    //$devicename = preg_replace($pattern, '', (string) $devicename);
 
     $query = "INSERT INTO IPstatus_config (ip_addr,device_name) VALUES ('$ipaddress','$devicename')";
     $query_run = mysqli_query($connection, $query);
@@ -247,6 +252,31 @@ if(isset($_POST['deletewebdata']))
     {
         echo "Failed";
         header('Location: defacemon_sett.php');
+    }
+}
+
+
+#Update file scan setting Data i.e scan_setting.php
+if(isset($_POST['updatescandata']))
+{
+    $id = $_POST["id"];
+    $account = $_POST["account"];
+    $path = $_POST["path"];
+    $email = $_POST["email"];
+    $extension = $_POST["extension"];
+
+    $query = "UPDATE filescan_config SET account='$account', scan_path='$path', email='$email', file_extensions='$extension' WHERE id='$id'";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "Success";
+        header('Location: scan_setting.php');
+    }
+    else
+    {
+        echo "Failed";
+        header('Location: scan_setting.php');
     }
 }
 # Signout from dashboard

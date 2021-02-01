@@ -99,7 +99,7 @@
                   </tbody>
                   <tfoot>
                   <tr>
-                    <th>IP Address</th>
+                    <th>Website</th>
                     <th>Status</th>
                     <th>Description</th>
                     <th>Date</th>

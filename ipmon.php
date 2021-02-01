@@ -99,7 +99,7 @@
                   <tr>
                     <th>IP Address</th>
                     <th>Status</th>
-                     <th>Device Name</th>
+                    <th>Device Name</th>
                     <th>Date</th>
                   </tr>
                   </tfoot>

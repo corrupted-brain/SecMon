@@ -123,11 +123,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>IP Address</label>
-                                <input type="text" name="ipaddress" class="form-control" required>
+                                <input type="text" name="ipaddress" class="form-control" minlength="7" maxlength="15" size="15" placeholder="xxx.xxx.xxx.xxx" pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$" required>
                             </div>
                             <div class="form-group">
                                 <label>Device Name</label>
-                                <input type="text" name="devicename" class="form-control" required>
+                                <input type="text" name="devicename" class="form-control" pattern="^[a-zA-Z0-9]+$" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -230,6 +230,14 @@
             });
         });
     </script>
+    <script type="text/javascript">
+    //input mask bundle ip address
+var ipv4_address = $('#ipv4');
+ipv4_address.inputmask({
+    alias: "ip",
+    greedy: false //The initial mask shown will be "" instead of "-____".
+});
+</script>
 </body>
 
 </html>

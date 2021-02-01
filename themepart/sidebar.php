@@ -20,7 +20,7 @@
         </div>
         <?php
         $connection = mysqli_connect("localhost","root","","hash_analyzer");
-        $query= "SELECT * FROM filehash_config";
+        $query= "SELECT * FROM filescan_config";
         $query_run= mysqli_query($connection,$query);
         $row = mysqli_fetch_assoc($query_run);
         ?>
@@ -105,6 +105,14 @@
                 </a>
               </li>
             </ul>
+             <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="scan_setting.php" class="nav-link">
+                  <i class="fa fa-file" aria-hidden="true"></i>
+                  <p>File Monitor Setting</p>
+                </a>
+              </li>
+            </ul>
           </li>
 
         </ul>
@@ -164,6 +172,7 @@
       </div>
    </div>
 </div>
+<!-- User registration close-->
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

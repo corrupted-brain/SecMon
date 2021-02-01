@@ -126,11 +126,11 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label>Webpage</label>
-                                <input type="text" name="website" class="form-control" required>
+                                <input type="text" name="website" class="form-control" pattern="^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$" required>
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <input type="text" name="description" class="form-control" required>
+                                <input type="text" name="description" class="form-control" pattern="^[a-zA-Z0-9\ ]+$" required>
                             </div>
                             <div class="form-group">
                                 <label>Email</label>
@@ -138,7 +138,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Contact</label>
-                                <input type="text" name="contact" class="form-control" required>
+                                <input type="number" name="contact" class="form-control" required>
                             </div>
                         </div>
                         <div class="modal-footer">

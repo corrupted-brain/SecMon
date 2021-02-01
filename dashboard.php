@@ -134,7 +134,17 @@
                 <!-- /.col -->
                 <div class="col-12 col-sm-6 col-md-3">
                   <div class="info-box mb-3"> <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-search"></i></span>
-                    <div class="info-box-content"> <span class="info-box-text">Changes</span> <span class="info-box-number">2,000</span> </div>
+                  <?php $query = "SELECT SUM(found_changes) AS changes FROM scan_log";
+                  $query_run = mysqli_query($connection,$query);
+                  if (mysqli_num_rows($query_run) > 0)
+                  {
+                  while ( $row = mysqli_fetch_array($query_run)) {
+                   $changes = $row["changes"];
+                  }
+                 }
+                 ?>
+
+                    <div class="info-box-content"> <span class="info-box-text">Changes</span> <span class="info-box-number"><?php  echo $changes; ?> </span> </div>
                     <!-- /.info-box-content -->
                   </div>
                   <!-- /.info-box -->
