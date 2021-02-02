@@ -70,7 +70,7 @@
                 ?>
 
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
+              <div class="card-body table-responsive p-0" style="height: 500px;">
 
                   <?php
                   $connection= mysqli_connect("localhost","root","","hash_analyzer");
@@ -149,7 +149,7 @@
                   <input type="text" class="form-control" name="path" id="path" placeholder="Scan Path">
                   <div class="input-group-append">
                      <div class="input-group-text">
-                        <span class="fas fa-envelope"></span>
+                        <span class="fas fa-location-arrow"></span>
                      </div>
                   </div>
                </div>
@@ -157,7 +157,7 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                   <div class="input-group-append">
                      <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+                        <span class="fas fa-envelope"></span>
                      </div>
                   </div>
                </div>
@@ -165,7 +165,7 @@
                   <input type="text" class="form-control" name="extension" id="extension" placeholder="Extensions">
                   <div class="input-group-append">
                      <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
+                        <span class="fas fa-cogs"></span>
                      </div>
                   </div>
                </div>

@@ -70,7 +70,7 @@
                 ?>
 
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
+              <div class="card-body table-responsive p-0" style="height: 500px;">
 
                   <?php
                   $connection= mysqli_connect("localhost","root","","hash_analyzer");

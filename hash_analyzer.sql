@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 12, 2020 at 04:59 PM
--- Server version: 10.1.28-MariaDB
--- PHP Version: 5.6.32
+-- Generation Time: Feb 02, 2021 at 07:21 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,7 +32,7 @@ CREATE TABLE `Deface` (
   `website` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `remark` varchar(255) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -46,36 +45,55 @@ INSERT INTO `Deface` (`id`, `website`, `status`, `remark`, `date`) VALUES
 (5, 'meteo.dhm.gov.np/cms', 'defaced', 'Dept. of Metrology', '2020-12-08 08:29:36'),
 (7, 'google.com', 'fine', 'Google', '2020-12-08 08:31:44'),
 (8, 'meteo.dhm.gov.np/cms', 'defaced', 'Dept. of Metrology', '2020-12-08 08:31:50'),
-(9, 'tcioe.edu.np/4u.html', 'defaced', '', '2020-12-08 09:45:06'),
-(11, 'google.com', 'fine', '', '2020-12-08 09:45:11'),
-(12, 'meteo.dhm.gov.np/cms', 'defaced', '', '2020-12-08 09:45:22'),
-(13, 'uniglobecollege.edu.np/index1.php', 'defaced', '', '2020-12-08 09:45:25');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Deface_config`
---
-
-CREATE TABLE `Deface_config` (
-  `id` int(11) NOT NULL,
-  `website` varchar(255) NOT NULL,
-  `remark` varchar(255) NOT NULL,
-  `phone` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `filehash_config`
---
-
-CREATE TABLE `filehash_config` (
-  `account` varchar(200) NOT NULL,
-  `scan_path` varchar(200) NOT NULL,
-  `email` varchar(200) NOT NULL,
-  `file_extensions` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(9, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus ', '2020-12-08 09:45:06'),
+(14, 'eminenceways.com', 'fine', 'office', '2021-01-08 05:34:21'),
+(15, 'office', 'Something went wrong.', 'office', '2021-01-08 05:34:21'),
+(18, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:33:45'),
+(19, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:33:45'),
+(20, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:33:45'),
+(21, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:33:45'),
+(22, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:33:49'),
+(23, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:33:49'),
+(24, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:49'),
+(25, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:49'),
+(26, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:33:49'),
+(27, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:33:49'),
+(28, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:49'),
+(29, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:49'),
+(30, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:33:54'),
+(31, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:33:54'),
+(32, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:33:55'),
+(33, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:33:55'),
+(34, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:33:57'),
+(35, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:33:57'),
+(36, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:57'),
+(37, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:57'),
+(38, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:33:58'),
+(39, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:33:58'),
+(40, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:58'),
+(41, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:33:58'),
+(42, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:34:02'),
+(43, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:34:02'),
+(44, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:34:03'),
+(45, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:34:03'),
+(46, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:34:05'),
+(47, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:34:05'),
+(48, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:05'),
+(49, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:05'),
+(50, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:34:06'),
+(51, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:34:06'),
+(52, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:06'),
+(53, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:06'),
+(54, 'test.com', 'fine', 'Dummuy Site', '2021-01-26 11:34:10'),
+(55, 'Dummuy Site', 'Something went wrong.', 'Dummuy Site', '2021-01-26 11:34:10'),
+(56, 'tuiost.edu.np', 'fine', 'CSIT website', '2021-01-26 11:34:13'),
+(57, 'CSIT website', 'Something went wrong.', 'CSIT website', '2021-01-26 11:34:13'),
+(58, '', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:13'),
+(59, '                                                        Google ', 'Something went wrong.', '                                                        Google ', '2021-01-26 11:34:13'),
+(60, 'naya.com', 'fine', '', '2021-01-31 18:32:16'),
+(61, 'naya site', 'Something went wrong.', '', '2021-01-31 18:32:16'),
+(62, 'naya.com', 'fine', 'naya site', '2021-01-31 18:33:47'),
+(63, 'naya site', 'Something went wrong.', 'naya site', '2021-01-31 18:33:47');
 
 -- --------------------------------------------------------
 
@@ -98,21 +116,19 @@ CREATE TABLE `file_history` (
 --
 
 INSERT INTO `file_history` (`time_stamp`, `status`, `file_path`, `old_hash`, `new_hash`, `file_last_mod`, `acct`) VALUES
-('2020-11-10 06:57:04', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-11-10 06:58:22', 'Altered', '/home/kailash/Desktop/college/lol.php', '89d13c30f59bf9c0796f55e5cedae63c03e92548', 'b99b195c02561e648ee416d17e1dadb365a0b1f8', '2020-11-10 06:57:42', 'Kailash'),
-('2020-11-10 06:58:22', 'Altered', '/home/kailash/Desktop/college/inclusion.txt', '119d724ca2d2081324ee4dfaa24249361bc5ec6e', '2643867fef892c50d52914398351b43f16b7521d', '2020-11-10 06:58:17', 'Kailash'),
-('2020-11-21 03:58:08', 'Altered', '/home/kailash/Desktop/college/inclusion.txt', '2643867fef892c50d52914398351b43f16b7521d', '23b9c492edd4b9818f6f1c8c5075324d772809e7', '2020-11-21 15:57:52', 'Kailash'),
-('2020-12-07 03:45:21', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-12-07 03:45:21', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-12-07 03:45:21', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-12-07 03:45:21', 'Deleted', '/home/kailash/Desktop/college/lol.php', 'b99b195c02561e648ee416d17e1dadb365a0b1f8', 'Not Applicable', '2020-11-10 06:57:42', 'Kailash'),
-('2020-12-08 10:28:22', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-12-08 10:28:22', 'Deleted', '/home/kailash/Desktop/college/28055935_1231882686943655_7498027669584834336_n.jpg', 'fbd8842d3567fe9d8247cb0385337af5502ac456', 'Not Applicable', '2020-12-04 09:35:22', 'Kailash'),
-('2020-12-08 10:28:55', 'Altered', '/home/kailash/Desktop/college/test.html', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'fb1640beb74bbb6f8d7ce81e2da237e884d68ad5', '2020-12-08 10:28:49', 'Kailash'),
-('2020-12-08 10:29:30', 'Deleted', '/home/kailash/Desktop/college/test.html', 'fb1640beb74bbb6f8d7ce81e2da237e884d68ad5', 'Not Applicable', '2020-12-08 10:28:49', 'Kailash'),
-('2020-12-08 10:38:51', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2020-12-08 10:39:14', 'Altered', '/home/kailash/Desktop/college/nepal.html', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'c1a66f27fd6d7b6acc9b7ead82f69a39cdc926b6', '2020-12-08 10:39:08', 'Kailash'),
-('2020-12-08 10:39:45', 'Deleted', '/home/kailash/Desktop/college/nepal.html', 'c1a66f27fd6d7b6acc9b7ead82f69a39cdc926b6', 'Not Applicable', '2020-12-08 10:39:08', 'Kailash');
+('2021-01-31 04:56:49', 'Deleted', '/home/kailash/Desktop/college/papers/SoICT-Paper-87-XuanDauHoang.pdf', 'c515ea2e05e6d123bf699ca73f80985844608953', 'Not Applicable', '2020-03-02 18:18:00', 'Kailash'),
+('2021-01-31 04:56:49', 'Altered', '/home/kailash/Desktop/college/index.html', '64d1f4138f8706a5a3bb5dc3055663c55722c365', 'd6f676b7d5925a7e7a0fd504b3a9a78786c9ec9d', '2021-01-31 16:56:39', 'Kailash'),
+('2021-01-31 04:56:48', 'Altered', '/home/kailash/Desktop/college/papers', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '2021-01-31 16:56:18', 'Kailash'),
+('2021-01-31 04:55:58', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-31 04:55:58', 'Altered', '/home/kailash/Desktop/college/FYP proposal .docx', '62cef8d907707f16be90955598e013c55d7c5e56', 'a2c113207c102942ac85f0ef9e10e57752c7366c', '2021-01-31 16:55:11', 'Kailash'),
+('2021-01-31 04:53:55', 'Altered', '/home/kailash/Desktop/college/inclusion.txt', '23b9c492edd4b9818f6f1c8c5075324d772809e7', 'a074e12c2226e8cc79c2cd3838a03c9fb16dab3b', '2021-01-28 18:14:25', 'Kailash'),
+('2021-01-26 12:37:57', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:57', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
+('2021-01-26 12:37:56', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash');
 
 -- --------------------------------------------------------
 
@@ -133,13 +149,14 @@ CREATE TABLE `file_scan_log` (
 
 INSERT INTO `file_scan_log` (`file_path`, `file_hash`, `file_last_mod`, `acct`) VALUES
 ('/home/kailash/Desktop/college/Presentation-for-FYP.pptx', 'b0317cbe2defd9c28e2524554443a5b086e9cd29', '2020-03-10 03:36:26', 'Kailash'),
-('/home/kailash/Desktop/college/FYP proposal .docx', '62cef8d907707f16be90955598e013c55d7c5e56', '2020-07-17 19:10:06', 'Kailash'),
-('/home/kailash/Desktop/college/papers/SoICT-Paper-87-XuanDauHoang.pdf', 'c515ea2e05e6d123bf699ca73f80985844608953', '2020-03-02 18:18:00', 'Kailash'),
+('/home/kailash/Desktop/college/FYP proposal .docx', 'a2c113207c102942ac85f0ef9e10e57752c7366c', '2021-01-31 16:55:11', 'Kailash'),
 ('/home/kailash/Desktop/college/papers/WebsiteDefacementIJCSIS.pdf', '124815570022b443447417ea19d1f4d330d6544e', '2020-03-02 18:17:12', 'Kailash'),
 ('/home/kailash/Desktop/college/papers/electronics-08-01338.pdf', 'af54c402331998d1f0abbb7c426f3406d3cb69ce', '2020-03-02 18:15:22', 'Kailash'),
 ('/home/kailash/Desktop/college/papers/computers-08-00035.pdf', '33eef2962c34f5a2ef32557caa9b9a5a2970cd90', '2020-03-02 18:13:36', 'Kailash'),
-('/home/kailash/Desktop/college/inclusion.txt', '23b9c492edd4b9818f6f1c8c5075324d772809e7', '2020-11-21 15:57:52', 'Kailash'),
-('/home/kailash/Desktop/college/FULLTEXT01.pdf', 'bb82a633d4b84e39296fcb6c7cf214dd0f5bc5e5', '2020-12-01 08:55:43', 'Kailash');
+('/home/kailash/Desktop/college/inclusion.txt', 'a074e12c2226e8cc79c2cd3838a03c9fb16dab3b', '2021-01-28 18:14:25', 'Kailash'),
+('/home/kailash/Desktop/college/FULLTEXT01.pdf', 'bb82a633d4b84e39296fcb6c7cf214dd0f5bc5e5', '2020-12-01 08:55:43', 'Kailash'),
+('/home/kailash/Desktop/college/papers', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '2021-01-31 16:56:18', 'Kailash'),
+('/home/kailash/Desktop/college/index.html', 'd6f676b7d5925a7e7a0fd504b3a9a78786c9ec9d', '2021-01-31 16:56:39', 'Kailash');
 
 -- --------------------------------------------------------
 
@@ -152,7 +169,7 @@ CREATE TABLE `IPstatus` (
   `ip_addr` varchar(15) DEFAULT NULL,
   `status` enum('up','down','n/a') NOT NULL DEFAULT 'n/a',
   `device_name` text NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -163,9 +180,52 @@ INSERT INTO `IPstatus` (`id`, `ip_addr`, `status`, `device_name`, `date`) VALUES
 (1, '192.168.1.1', 'up', 'Router', '2020-12-10 19:51:33'),
 (2, 'Router', 'down', 'Router', '2020-12-10 19:51:34'),
 (3, '192.168.1.10', 'up', 'Kailash Laptop', '2020-12-10 19:51:34'),
-(4, 'Kailash Laptop', 'down', 'Kailash Laptop', '2020-12-10 19:51:34'),
-(5, '192.168.1.99', 'down', 'Dummy Server', '2020-12-10 19:51:38'),
-(6, 'Dummy Server', 'down', 'Dummy Server', '2020-12-10 19:51:38');
+(13577, '127.0.0.1', 'up', 'Localhost', '2021-01-24 04:39:03'),
+(13578, '165.22.215.101', 'up', 'TU IOST website', '2021-01-24 04:39:03'),
+(13579, '98989899898', 'down', '98989899898', '2021-01-24 07:27:56'),
+(13597, 'TU IOST website', 'down', 'TU IOST website', '2021-01-24 07:40:39'),
+(13614, '10.10.1.10', 'down', 'test', '2021-01-25 06:52:24'),
+(13615, 'test', 'down', 'test', '2021-01-25 06:52:24'),
+(13628, '1', 'down', 'HfjNUlYZ', '2021-01-26 11:40:44'),
+(13629, 'HfjNUlYZ', 'down', 'HfjNUlYZ', '2021-01-26 11:40:45'),
+(13634, '@@aA7E5', 'down', '@@aA7E5', '2021-01-26 11:40:55'),
+(13636, 'JyI=', 'down', 'JyI=', '2021-01-26 11:41:00'),
+(13637, '@@iG4Su', 'down', 'HfjNUlYZ', '2021-01-26 11:41:00'),
+(13643, 'UjhHbjZlNng=', 'down', 'UjhHbjZlNng=', '2021-01-26 11:41:05'),
+(13648, 'Array', 'down', 'Array', '2021-01-26 11:41:11'),
+(13665, 'xJvAbIm9', 'down', 'xJvAbIm9', '2021-01-26 11:41:21'),
+(13666, '3aYtQGLg', 'down', 'HfjNUlYZ', '2021-01-26 11:41:21'),
+(13686, '../HfjNUlYZ', 'down', '../HfjNUlYZ', '2021-01-26 11:41:27'),
+(13734, 'bxss.me', 'down', 'bxss.me', '2021-01-26 11:41:39'),
+(13807, ')', 'up', ')', '2021-01-26 11:41:47'),
+(13808, '!(()&&!|*|*|', 'up', '!(()&&!|*|*|', '2021-01-26 11:41:47'),
+(13819, 'HfjNUlYZ9750960', 'down', 'HfjNUlYZ9750960', '2021-01-26 11:41:48'),
+(13820, '{{49094*49481}}', 'down', '{{49094*49481}}', '2021-01-26 11:41:48'),
+(13824, '{{49832*49502}}', 'down', 'HfjNUlYZ', '2021-01-26 11:41:48'),
+(13828, '/xfs.bxss.me', 'down', '/xfs.bxss.me', '2021-01-26 11:41:48'),
+(13834, 'code.php', 'down', 'code.php', '2021-01-26 11:41:48'),
+(13835, 'code.php\0', 'up', 'code.php\0', '2021-01-26 11:41:48'),
+(13836, 'code.php/.', 'down', 'code.php/.', '2021-01-26 11:41:48'),
+(13845, 'FQkDfj0U', 'down', 'FQkDfj0U', '2021-01-26 11:41:48'),
+(14030, 'SUBwSFkx', 'down', 'HfjNUlYZ', '2021-01-26 11:41:59'),
+(15917, '127.0.0.2', 'up', 'Localhost', '2021-01-26 19:05:26'),
+(15918, 'Localhost', 'up', 'Localhost', '2021-01-26 19:05:26'),
+(15919, '1.1.1.1', 'up', 'dork', '2021-01-26 19:05:26'),
+(15920, 'dork', 'down', 'dork', '2021-01-26 19:05:26'),
+(15921, '2.3.3.3.', 'down', 'naya', '2021-01-26 19:05:26'),
+(15922, 'naya', 'down', 'naya', '2021-01-26 19:05:26'),
+(15923, 'a.com', 'down', 'aa', '2021-01-26 19:05:27'),
+(15924, 'aa', 'down', 'aa', '2021-01-26 19:05:27'),
+(16451, '10.10.10.1', 'down', 'chiya pasal', '2021-02-01 03:11:17'),
+(16452, 'chiya pasal', 'down', 'chiya pasal', '2021-02-01 03:11:17'),
+(16453, '192168.111.2', 'down', 'ewq', '2021-02-01 03:11:17'),
+(16454, 'ewq', 'down', 'ewq', '2021-02-01 03:11:17'),
+(16583, '192312', 'down', 'haha', '2021-02-01 10:34:51'),
+(16584, 'haha', 'down', 'haha', '2021-02-01 10:34:51'),
+(16585, '192456', 'down', 'haha2', '2021-02-01 10:35:01'),
+(16586, 'haha2', 'down', 'haha2', '2021-02-01 10:35:01'),
+(16587, '19266555', 'down', 'yest', '2021-02-01 10:35:11'),
+(16588, 'yest', 'down', 'yest', '2021-02-01 10:35:11');
 
 -- --------------------------------------------------------
 
@@ -184,9 +244,13 @@ CREATE TABLE `IPstatus_config` (
 --
 
 INSERT INTO `IPstatus_config` (`id`, `ip_addr`, `device_name`) VALUES
-(1, '192.168.1.1', 'Router'),
-(2, '192.168.1.10', 'Kailash Laptop'),
-(3, '192.168.1.99', 'Dummy Server');
+(157, '127.0.0.2', 'Localhost'),
+(158, '1.1.1.1', 'dork'),
+(161, '10.10.10.1', 'chiya pasal'),
+(162, '192168.111.2', 'ewq'),
+(163, '192312', 'haha'),
+(164, '192456', 'haha2'),
+(166, '19266555', 'yest');
 
 -- --------------------------------------------------------
 
@@ -196,7 +260,7 @@ INSERT INTO `IPstatus_config` (`id`, `ip_addr`, `device_name`) VALUES
 
 CREATE TABLE `scan_log` (
   `scan_time` char(19) NOT NULL,
-  `found_changes` int(11) NOT NULL DEFAULT '0',
+  `found_changes` int(11) NOT NULL DEFAULT 0,
   `acct` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -205,15 +269,10 @@ CREATE TABLE `scan_log` (
 --
 
 INSERT INTO `scan_log` (`scan_time`, `found_changes`, `acct`) VALUES
-('2020-12-08 10:39:45', 1, 'Kailash'),
-('2020-12-08 10:39:14', 1, 'Kailash'),
-('2020-12-08 10:38:52', 1, 'Kailash'),
-('2020-12-08 10:28:22', 2, 'Kailash'),
-('2020-12-08 10:29:30', 1, 'Kailash'),
-('2020-12-08 10:28:55', 1, 'Kailash'),
-('2020-11-10 06:58:22', 2, 'Kailash'),
-('2020-11-21 03:58:08', 1, 'Kailash'),
-('2020-12-07 03:45:21', 3, 'Kailash');
+('2021-01-31 04:56:49', 3, 'Kailash'),
+('2021-01-31 04:55:58', 2, 'Kailash'),
+('2021-01-31 04:53:55', 1, 'Kailash'),
+('2021-01-26 12:37:56', 1, 'Kailash');
 
 -- --------------------------------------------------------
 
@@ -233,9 +292,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
-(2, 'Google ', 'gmail123', 'gmail@gmail.com'),
-(55, 'kailash', 'ca86de6bd4af8c27e0467d433e0bd3a209c342bc', 'kb@b.com'),
-(56, 'Test User', '7288edd0fc3ffcbe93a0cf06e3568e28521687bc', 'test@test.com');
+(1, 'Kailash', 'A6AD00AC113A19D953EFB91820D8788E2263B28A', 'test@test.com'),
+(98, '  Super Admin1  ', 'nepal@123', 'test@admin.com'),
+(99, ' Kailash Bohara', '3375bc0b4445a1e2c49c5925e5b943c2c71bcdbd', 'kailash@me.com'),
+(100, 'demo user', '7db4575d7eb43af49df637b3480d4256649b8cdb', 'gokul@gokul'),
+(101, 'new user', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'new@mew.com');
 
 --
 -- Indexes for dumped tables
@@ -245,12 +306,6 @@ INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
 -- Indexes for table `Deface`
 --
 ALTER TABLE `Deface`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `Deface_config`
---
-ALTER TABLE `Deface_config`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -292,25 +347,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `Deface`
 --
 ALTER TABLE `Deface`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `IPstatus`
 --
 ALTER TABLE `IPstatus`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17023;
 
 --
 -- AUTO_INCREMENT for table `IPstatus_config`
 --
 ALTER TABLE `IPstatus_config`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

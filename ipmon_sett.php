@@ -63,7 +63,7 @@
                                     <?php if (isset($_SESSION[ 'success']) && $_SESSION[ 'success'] !='' ) { echo '<h2>' . $_SESSION[ 'success'] . '</h2>'; unset($_SESSION[ 'success']); } if (isset($_SESSION[ 'status']) && $_SESSION[ 'status'] !='' ) { echo '<h2>' . $_SESSION[ 'status'] . '</h2>'; unset($_SESSION[ 'status']); } ?>
 
                                     <!-- /.card-header -->
-                                    <div class="card-body table-responsive p-0" style="height: 400px;">
+                                    <div class="card-body table-responsive p-0" style="height: 500px;">
 
                                         <?php $connection=mysqli_connect( "localhost", "root", "", "hash_analyzer"); $query="SELECT * FROM IPstatus_config" ; $query_run=mysqli_query($connection, $query); ?>
                                         <table class="table table-head-fixed text-nowrap">
@@ -195,6 +195,17 @@
         </div>
     </div>
     </div>
+</div>
+
+  <!-- /.content-wrapper -->
+<?php include 'themepart/footer.php'; ?>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

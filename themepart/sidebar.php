@@ -5,7 +5,7 @@
 </head>
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="#" class="brand-link">
+    <a href="dashboard.php" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">SystemMon</span>
@@ -44,6 +44,13 @@
           </li> 
           <li class="nav-header">Menu</li>
           <li class="nav-item has-treeview">
+            <a href="fim.php" class="nav-link">
+              <i class="nav-icon fa fa-folder-open"></i>
+              <p>
+                File Integrity Monitor
+              </p>
+            </a>
+          <li class="nav-item has-treeview">
             <a href="webmon.php" class="nav-link">
               <i class="nav-icon fa fa-exclamation-triangle"></i>
               <p>
@@ -57,6 +64,7 @@
                 IP Monitor
               </p>
             </a>
+
           <li class="nav-header">Management</li>
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
