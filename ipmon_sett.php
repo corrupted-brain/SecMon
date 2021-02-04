@@ -81,14 +81,13 @@
 
                                                 <tr>
                                                     <td>
-                                                        <?php echo $row[ 'id']; ?> </td>
+                                                        <?php echo $row['id']; ?> </td>
                                                     <td>
-                                                        <?php echo $row[ 'ip_addr']; ?> </td>
+                                                        <?php echo $row['ip_addr']; ?> </td>
                                                     <td>
-                                                        <?php echo $row[ 'device_name']; ?> </td>
+                                                        <?php echo $row['device_name']; ?> </td>
 
                                                     <td>
-                                                        <!--<a href="#editIPModal" class="btn btn-success editbtn" data-toggle="modal">Edit</a>-->
                                                         <button type="button" class="btn btn-success editbtn" data-toggle="modal" data-target="#editIPModal">Edit</button>
                                                     </td>
                                                     <td>
@@ -213,9 +212,9 @@
         $(document).ready(function() {
             $('.editbtn').on('click', function() {
                 $('#editIPModal').modal('show');
-                $tr = $(this).closest('tr');
-                var data = $tr.children("td").map(function() {
-                    return $(this).text();
+                var tr = $(this).closest('tr');
+                var data = tr.children("td").map(function() {
+                return $(this).text();
                 }).get();
                 console.log(data);
 
@@ -232,7 +231,7 @@
                 $('#deleteIPModal').modal('show');
                 $tr = $(this).closest('tr');
                 var data = $tr.children("td").map(function() {
-                    return $(this).text();
+                return $(this).text();
                 }).get();
                 console.log(data);
 

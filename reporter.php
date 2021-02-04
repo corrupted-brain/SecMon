@@ -36,12 +36,12 @@ if ($_SERVER['REMOTE_ADDR']=='127.0.0.1')
 }
 //	END OF CONFIGURE
 
-$report = "SuperScan Daily Report\r\n\r\n";
+$report = "SecMon Daily Report\r\n\r\n";
 
 //	Prepare scan report
 $yesterday = date("Y-m-d H:i:s", mktime(date('H'), date('i'), date('s'), date('n'), date('j')-1,date('Y')));
 
-$report .= "SuperScan log report for $acct file changes since ".$yesterday.":\r\n\r\n";
+$report .= "SecMon log report for $acct file changes since ".$yesterday.":\r\n\r\n";
 
 // 	use define statements or enter values directly in the mysqli_connect
 include('config.php');

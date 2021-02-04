@@ -65,10 +65,7 @@ if ($baseline_results)
 	$report .= "$count_baseline files accessed by an attacker.\r\n";
 	
 }
-//	Baseline files read into baseline array and baseline_count made
 
-
-//	SCAN
 
 //	Scan directories and generate hash values for current files
 $dir = new RecursiveDirectoryIterator(SCAN_PATH);
