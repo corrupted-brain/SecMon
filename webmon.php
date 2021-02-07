@@ -169,5 +169,14 @@
 <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
 <!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
+<script>
+  $(document).ready(function () {
+  function reload() {
+    $("#content").load("deface.php");
+  }
+  setTimeOut(reload, seconds*1000)
+}
+</script>
+
 </body>
 </html>

@@ -42,39 +42,25 @@ function callURL($url){
 
 	return $response;
 }
-?>
-<pre>
-	<?php
+
 	$sql = "SELECT website, description FROM deface_config ORDER BY id";
 	$result = mysqli_query($connection, $sql);
-	while($row = mysqli_fetch_assoc($result))
-	{
-		$ip_addr = $row['website'];
+
+	while($row = mysqli_fetch_assoc($result)){
+		$url = $row['website'];
 		$remark = $row['description'];
-		foreach($row as $url){
-			if(!empty(callURL($url))){
-				if(preg_match($pattern, callURL($url))){
-				//echo "URL: ".$url."<br>";
-				//echo "Status : Website Might Be Defaced.<br><br>";
-				$status = "defaced";
-				 $query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','$status','$remark')";
-    $query_run = mysqli_query($connection,$query); 
+
+		if(!empty(callURL($url))){
+			if(preg_match($pattern, callURL($url))){
+				$query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','defaced','$remark')";
 			}else{
-				//echo "URL    : ".$url."<br>";
-				//echo "Status : Hurray! Website Is Fine.<br><br>";
-					$status = "fine";
-				 $query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','$status','$remark')";
-    $query_run = mysqli_query($connection,$query); 
+				$query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','fine','$remark')";
 			}
 		}else{
-			//echo "URL    : ".$url."<br>";
-			//echo "Status : Something Went Wrong!!!<br><br>";
-			$status = "Something went wrong.";
-				 $query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','$status','$remark')";
-    $query_run = mysqli_query($connection,$query); 
+			$query = "INSERT INTO Deface (website,status,remark) VALUES ('$url','Something Went Wrong','$remark')";
 		}
+		$query_run = mysqli_query($connection,$query);
 	}
-}
 	?>
 
 </body>

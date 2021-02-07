@@ -24,29 +24,21 @@ $connection = mysqli_connect("localhost","root","","hash_analyzer");
         }
 
 $sql = "SELECT ip_addr, device_name FROM IPstatus_config ORDER BY id";
+
 $result = mysqli_query($connection, $sql);
+
 while($row = mysqli_fetch_assoc($result))
 {
- $ip_addr = $row['ip_addr'];
- $device_name = $row['device_name'];
-
-        foreach ($row as $ip)
-        {
+    $ip = $row['ip_addr'];
+    $device_name = $row['device_name'];
 
     if (ping($ip)){
-        $status = "Up";
-    //$query = "UPDATE IPstatus SET ip_addr = '$ip', status='$status' WHERE id='$id' ";
-                $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','$status','$device_name')";
-    $query_run = mysqli_query($connection,$query); 
-}
-    else 
-    {
-        $status = "Down";
-          // $query = "UPDATE IPstatus SET ip_addr = '$ip', status='$status' WHERE id='$id' ";
-             $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','$status','$device_name')";
-    $query_run = mysqli_query($connection,$query); 
-}
-}
+        $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','Up','$device_name')";
+    }else{
+        $query = "INSERT INTO IPstatus (ip_addr,status,device_name) VALUES ('$ip','Down','$device_name')";
+    }
+
+    $query_run = mysqli_query($connection,$query);
 }
 echo "{\"Check\":\"Mate\"}";
 ?>

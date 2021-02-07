@@ -2,11 +2,8 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-#include_once '../config/config.php';
-include_once '../class/class.php';
-
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
-$query = "SELECT id, ip_addr, status, date FROM IPstatus";
+$query = "SELECT id, ip_addr, status, device_name, date FROM IPstatus";
 $query_run = mysqli_query($connection,$query);
 
 if($query_run)
@@ -25,6 +22,7 @@ if($query_run)
             "id" => $id,
             "ip_addr" => $ip_addr,
             "status" => $status,
+            "device_name" => $device_name,
             "logged_date" => $date,
                 );
             //array_push($dataArr, $e);

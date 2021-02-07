@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 02, 2021 at 07:21 AM
+-- Generation Time: Feb 04, 2021 at 05:01 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -94,6 +94,55 @@ INSERT INTO `Deface` (`id`, `website`, `status`, `remark`, `date`) VALUES
 (61, 'naya site', 'Something went wrong.', '', '2021-01-31 18:32:16'),
 (62, 'naya.com', 'fine', 'naya site', '2021-01-31 18:33:47'),
 (63, 'naya site', 'Something went wrong.', 'naya site', '2021-01-31 18:33:47');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `deface_config`
+--
+
+CREATE TABLE `deface_config` (
+  `id` int(255) NOT NULL,
+  `website` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `deface_config`
+--
+
+INSERT INTO `deface_config` (`id`, `website`, `description`, `email`, `contact`) VALUES
+(4, 'naya.com', 'naya site', 'naya ho', 'contact'),
+(5, '                                                        google.com ', '                                                        lolo ', '                                                        test@rest.com ', '                                               asas                                                                 Edit                                                    '),
+(6, 'kalija.com', 'Kalija', 'kalij@rest.com', 'contact'),
+(7, 'goli.com', 'goliz', 'goliz@goliz.com', 'contact'),
+(8, 'http://google.com', 'lolollolasas', 'test@test.com', 'contact'),
+(9, 'lol.com', 'dfgh jhgf', 'test@test.com', 'contact'),
+(10, 'papa.co', 'papa papi', 'rato@tato', 'contact'),
+(11, 'lolu.com', 'golu lolu', 'test@golu', 'contact');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `filescan_config`
+--
+
+CREATE TABLE `filescan_config` (
+  `id` int(255) NOT NULL,
+  `account` varchar(200) NOT NULL,
+  `scan_path` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `file_extensions` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `filescan_config`
+--
+
+INSERT INTO `filescan_config` (`id`, `account`, `scan_path`, `email`, `file_extensions`) VALUES
+(1, ' kailash  1', ' /home/Desktop/College/   ', 'kailashbohara0x00@gmail.com', '     *     ');
 
 -- --------------------------------------------------------
 
@@ -225,7 +274,13 @@ INSERT INTO `IPstatus` (`id`, `ip_addr`, `status`, `device_name`, `date`) VALUES
 (16585, '192456', 'down', 'haha2', '2021-02-01 10:35:01'),
 (16586, 'haha2', 'down', 'haha2', '2021-02-01 10:35:01'),
 (16587, '19266555', 'down', 'yest', '2021-02-01 10:35:11'),
-(16588, 'yest', 'down', 'yest', '2021-02-01 10:35:11');
+(16588, 'yest', 'down', 'yest', '2021-02-01 10:35:11'),
+(17277, '192.168.1.73', 'up', 'Kalilinux', '2021-02-02 16:06:39'),
+(17278, 'Kalilinux', 'down', 'Kalilinux', '2021-02-02 16:06:39'),
+(17303, '202.20.20.20', 'down', 'demo', '2021-02-02 16:45:18'),
+(17304, 'demo', 'down', 'demo', '2021-02-02 16:45:18'),
+(17305, '10.10.1.1', 'down', 'teststs', '2021-02-02 16:45:28'),
+(17306, 'teststs', 'down', 'teststs', '2021-02-02 16:45:28');
 
 -- --------------------------------------------------------
 
@@ -244,13 +299,11 @@ CREATE TABLE `IPstatus_config` (
 --
 
 INSERT INTO `IPstatus_config` (`id`, `ip_addr`, `device_name`) VALUES
-(157, '127.0.0.2', 'Localhost'),
-(158, '1.1.1.1', 'dork'),
-(161, '10.10.10.1', 'chiya pasal'),
-(162, '192168.111.2', 'ewq'),
-(163, '192312', 'haha'),
-(164, '192456', 'haha2'),
-(166, '19266555', 'yest');
+(157, '127.0.0.1', 'Localhost'),
+(169, '192.168.1.73', 'Kalilinux'),
+(170, '                                                        202.12.12.3 ', '                                                        worldlink1'),
+(171, '202.20.20.20', 'demo'),
+(172, '10.10.1.1', 'teststs');
 
 -- --------------------------------------------------------
 
@@ -296,7 +349,28 @@ INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
 (98, '  Super Admin1  ', 'nepal@123', 'test@admin.com'),
 (99, ' Kailash Bohara', '3375bc0b4445a1e2c49c5925e5b943c2c71bcdbd', 'kailash@me.com'),
 (100, 'demo user', '7db4575d7eb43af49df637b3480d4256649b8cdb', 'gokul@gokul'),
-(101, 'new user', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'new@mew.com');
+(101, ' new user1', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'new@mew.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `virus`
+--
+
+CREATE TABLE `virus` (
+  `id` int(255) NOT NULL,
+  `file_path` varchar(255) NOT NULL,
+  `file_hash` varchar(255) NOT NULL,
+  `acct` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `virus`
+--
+
+INSERT INTO `virus` (`id`, `file_path`, `file_hash`, `acct`) VALUES
+(2, '/desktop/file.html', 'D5DD920BE5BCFEB904E95DA4B6D0CCCA0727D692', 'Kailash'),
+(3, 'nepal/test.php', 'D5DD920BE5BCFEB904E95DA4B6D0CCCA0727D692', 'Kailash');
 
 --
 -- Indexes for dumped tables
@@ -306,6 +380,18 @@ INSERT INTO `users` (`id`, `name`, `password`, `email`) VALUES
 -- Indexes for table `Deface`
 --
 ALTER TABLE `Deface`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `deface_config`
+--
+ALTER TABLE `deface_config`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `filescan_config`
+--
+ALTER TABLE `filescan_config`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -340,6 +426,12 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `virus`
+--
+ALTER TABLE `virus`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -350,22 +442,40 @@ ALTER TABLE `Deface`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
+-- AUTO_INCREMENT for table `deface_config`
+--
+ALTER TABLE `deface_config`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `filescan_config`
+--
+ALTER TABLE `filescan_config`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `IPstatus`
 --
 ALTER TABLE `IPstatus`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17023;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17939;
 
 --
 -- AUTO_INCREMENT for table `IPstatus_config`
 --
 ALTER TABLE `IPstatus_config`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+
+--
+-- AUTO_INCREMENT for table `virus`
+--
+ALTER TABLE `virus`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

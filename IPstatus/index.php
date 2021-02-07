@@ -31,8 +31,8 @@
 				})
 				$('#table_id').DataTable().ajax.reload();
 			},60000); //60000 Millisecond = 1 minute
-	</script> <!--
-<script>
+	</script> 
+<!--<script>
     $(document).ready(function () {
   function reload() {
     $("#content").load("check.php");
