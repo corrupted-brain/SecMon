@@ -155,68 +155,30 @@
               <!-- Main content -->
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">File Scan log</h3> </div>
+                  <h3 class="card-title">File Integrity Monitoring</h3> </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                  <?php
-                $connection= mysqli_connect("localhost","root","","hash_analyzer");
-                $query= "SELECT * FROM file_history";
-                $query_run= mysqli_query($connection,$query);
-               // print_r($query_run);
-
-                 ?>
-                    <table id="example1" class="table table-bordered table-striped">
+                    <table id="filehash_table" class="table table-bordered table-striped">
                       <thead>
-                        <tr>
-                          <th>Status</th>
-                          <th>File Path</th>
-                          <th>Old Hash</th>
-                          <th>New Hash</th>
-                          <th>Modified Time</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                    if(mysqli_num_rows($query_run)> 0)
-                    {
-                      while($row = mysqli_fetch_assoc($query_run))
-                      {
-                       ?>
-                          <tr>
-                            <td>
-                              <?php echo $row['status'];?>
-                            </td>
-                            <td>
-                              <?php echo $row['file_path'];?>
-                            </td>
-                            <td>
-                              <?php echo $row['old_hash'];?>
-                            </td>
-                            <td>
-                              <?php echo $row['new_hash'];?>
-                            </td>
-                            <td>
-                              <?php echo $row['file_last_mod'];?>
-                            </td>
-                          </tr>
-                          <?php
-
-                      }
-                    }
-                    else {
-                      echo "No record found!";
-                    }
-                    ?>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>Status</th>
-                          <th>File Path</th>
-                          <th>Old Hash</th>
-                          <th>New Hash</th>
-                          <th>Modified Time</th>
-                        </tr>
-                      </tfoot>
+                  <tr>
+                    <th>Status</th>
+                    <th>Path</th>
+                    <th>Modified hash</th>
+                    <th>old hash</th>
+                    <th>Modified Time</th>
+                    <th>User</th>
+                  </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th>Status</th>
+                    <th>Path</th>
+                    <th>Modified hash</th>
+                    <th>old hash</th>
+                    <th>Modified Time</th>
+                    <th>User</th>
+                  </tr>
+                  </tfoot>
                     </table>
                 </div>
               </div>
@@ -225,68 +187,29 @@
                 <div class="card-header">
                   <h3 class="card-title">Device Monitoring</h3> </div>
                 <div class="card-body">
-                  <?php
-                $connection= mysqli_connect("localhost","root","","hash_analyzer");
-                $query= "SELECT * FROM IPstatus";
-                $query_run= mysqli_query($connection,$query);
-                ?>
-                    <table id="example2" class="table table-bordered table-striped">
+                    <table id="ipmon_table" class="table table-bordered table-striped">
                       <thead>
-                        <tr>
-                          <th>IP Address</th>
-                          <th>Status</th>
-                          <th>Device Name</th>
-                          <th>Date</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <?php
-                    if(mysqli_num_rows($query_run)> 0)
-                    {
-                      while($row = mysqli_fetch_assoc($query_run))
-                      {
-                       ?>
-                          <tr>
-                            <td>
-                              <?php echo $row['ip_addr'];?>
-                            </td>
-                            <?php $status=$row['status'];
-
-                     if($status=='up'){
-         echo "<td class='table-success'>"."System Up"."</td>"; }
-        else
-   
-         echo "<td class='table-danger'>"."System Down"."</td>";; 
-
-                    ?>
-                              <td>
-                                <?php echo $row['device_name'];?>
-                              </td>
-                              <td>
-                                <?php echo $row['date'];?>
-                              </td>
-                          </tr>
-                          <?php
-
-                      }
-                    }
-                    else {
-                      echo "No record found!";
-                    }
-                    ?>
-                      </tbody>
-                      <tfoot>
-                        <tr>
-                          <th>IP Address</th>
-                          <th>Status</th>
-                          <th>Date</th>
-                        </tr>
-                      </tfoot>
+                  <tr>
+                    <th>ID</th>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Device Name</th>
+                    <th>Date</th>
+                  </tr>
+                  </thead>
+                  <tfoot>
+                  <tr>
+                    <th>ID</th>
+                    <th>IP Address</th>
+                    <th>Status</th>
+                    <th>Device Name</th>
+                    <th>Date</th>
+                  </tr>
+                  </tfoot>
                     </table>
                 </div>
               </div>
           </div>
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -320,7 +243,7 @@
     <!-- PAGE SCRIPTS -->
     <script src="dist/js/pages/dashboard2.js"></script>
     <script type="text/javascript">
-    setInterval(function() {
+   a setInterval(function() {
       $.getJSON("IPstatus/check.php", function(e) {
         document.getElementById("check").innerHTML = e.Check;
       })
@@ -328,18 +251,94 @@
     }, 60000); //60000 Millisecond = 1 minute
     </script>
     <script>
-    $(function() {
-      $("#example1").DataTable();
-      $('#example2').DataTable({
+    $(document).ready(function() {
+      $('#filehash_table').DataTable( {
+        "language": {
+          "infoEmpty": "No records available.",
+        },
         "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-      });
-    });
+        "processing": true,
+        "fixedHeader": true,
+        "responsive": true,
+        //"serverSide": true,
+        ajax: {
+          url: 'FileScanStatus/index.php',
+          dataSrc: 'FileScanStatus',
+        },
+        columns: [
+          { data: 'status' },
+          { data: 'file_path' },
+          { data: 'new_hash' },
+          { data: 'old_hash' },
+          { data: 'file_last_mod' },
+          { data: 'acct' }
+          ],
+        "columnDefs": [
+
+                { 
+                  responsivePriority: 1, targets: 5
+                  },
+                { 
+                  responsivePriority: 2, targets: 4
+                  },
+                  {
+                    targets: 0,
+                    render: function ( data, type, row ) {
+                      var color = 'black';
+                      if (data == 'Unchanged') {
+                        color = 'green';
+                      } 
+                      if (data == 'Altered') {
+                        color = '#ff4d4d';
+                      }
+                      if (data == 'Deleted') {
+                        color = '#ff0000';
+                      }
+                      if (data == 'Added') {
+                        color = '#0040ff';
+                      }
+                      return '<span style="color:' + color + '">' + data + '</span>';
+                    }
+                  }
+
+            ]
+    } );     
+} );
     </script>
+    <script type="text/javascript">
+      $('#ipmon_table').DataTable({
+        "language": {
+          "infoEmpty": "No records available.",
+        },
+        "paging": true,
+        "processing": true,
+        ajax: {
+          url: 'IPstatus/api/index.php',
+          dataSrc: 'IPstatus',
+        },
+        columns: [
+          { data: 'id' },
+          { data: 'ip_addr' },
+          { data: 'status' },
+          { data: 'device_name' },
+          { data: 'logged_date' }
+          ],
+        columnDefs: [{targets: 2,
+                    render: function ( data, type, row ) {
+                      var color = 'black';
+                      if (data == 'up') {
+                        color = 'green';
+                      } 
+                      if (data == 'down') {
+                        color = 'red';
+                      }
+                      return '<span style="color:' + color + '">' + data + '</span>';
+                    }
+               }],
+        responsive: true,
+        });
+      </script>
+
 </body>
 
 </html>

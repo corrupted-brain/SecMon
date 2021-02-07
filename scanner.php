@@ -125,7 +125,7 @@ while ($iter->valid())
 
 			} else {
 
-				//	IF file was ALTERED 
+				//	IF file was Edited 
 				if ($baseline[$file_path]['file_hash'] <> $current[$file_path]['file_hash'] || $baseline[$file_path]['file_last_mod'] <> $current[$file_path]['file_last_mod'])
 				{
 					$altered[$file_path] = array('old_hash' => $baseline[$file_path]['file_hash'], 'new_hash' => $current[$file_path]['file_hash'], 'file_last_mod' => $current[$file_path]['file_last_mod']);
@@ -135,7 +135,7 @@ while ($iter->valid())
 					if ($testing && mysqli_error($scandb)) echo mysqli_error($scandb);
 
 					//	INSERT altered file info in history table
-					@mysqli_query($scandb,"INSERT INTO file_history SET `time_stamp` = '" . date('Y-m-d h:i:s') . "', `status` = 'Altered', `file_path` = '$file_path', `old_hash` = '" . $altered[$file_path]['old_hash'] . "', `new_hash` = '" . $altered[$file_path]['new_hash'] . "', `file_last_mod` = '" . $altered[$file_path]['file_last_mod'] . "', `acct` = '$acct'");
+					@mysqli_query($scandb,"INSERT INTO file_history SET `time_stamp` = '" . date('Y-m-d h:i:s') . "', `status` = 'Edited', `file_path` = '$file_path', `old_hash` = '" . $altered[$file_path]['old_hash'] . "', `new_hash` = '" . $altered[$file_path]['new_hash'] . "', `file_last_mod` = '" . $altered[$file_path]['file_last_mod'] . "', `acct` = '$acct'");
 					if ($testing && mysqli_error($scandb)) echo mysqli_error($scandb);
 				}
 			}
@@ -194,7 +194,7 @@ if (!$firstscan)
 }
 
 $count_altered = count($altered);
-$report .= "$indent $count_altered ALTERED files updated.\r\n";
+$report .= "$indent $count_altered EDITED files updated.\r\n";
 foreach($altered as $filename => $value) $report .= "$indent2 " . chr(177) . " " . substr($filename,$scan_path_length) . "\r\n";
 
 $count_deleted = count($deleted);
@@ -231,10 +231,10 @@ Baseline start: $count_baseline
 Current Baseline: $count_current
 Changes to baseline: $count_changes\r\n
 $indent Added: $count_added
-$indent Altered: $count_altered
+$indent Edited: $count_altered
 $indent Deleted: $count_deleted.\r\n
 Scan executed in $elapsed seconds.";
-	if (0 < $count_changes) $report .= "\r\n\r\nIf you did not makes these changes, examine your files closely\r\nfor evidence of embedded hacker code or added hacker files.\r\n(WinMerge provides excellent comparisons)";
+	if (0 < $count_changes) $report .= "\r\n\r\nIf you did not makes these changes, examine your files closely\r\nfor evidence of embedded hacker code or added hacker files.";
 }
 
 //	Clean-up history table and scanned table by deleting entries over 30 days old
@@ -257,7 +257,7 @@ if ($email_out && 0 < $count_changes)
 	} else {
 		$to = $addresses[0];
 	}
-	mail($to, "SuperScan Report for $acct",str_replace('&nbsp;',' ',$report)); 
+	mail($to, "SecMon Report for $acct",str_replace('&nbsp;',' ',$report)); 
 }
 
 //	Output Report for testing

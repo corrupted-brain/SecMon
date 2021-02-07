@@ -16,16 +16,7 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-  <style type="text/css">
-body {
-  font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  color: #333;
-  background-color: #fff;
-}
 
-  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

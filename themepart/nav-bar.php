@@ -40,7 +40,17 @@
 
             <p>
               <?php echo $_SESSION['username']; ?> 
-              <small>Member since Nov. 2012</small>
+              <?php $query = "SELECT time_stamp FROM users";
+                  $query_run = mysqli_query($connection,$query);
+                  if (mysqli_num_rows($query_run) > 0)
+                  {
+                  while ( $row = mysqli_fetch_array($query_run)) {
+                   $joined = $row["time_stamp"];
+                  }
+                 }
+                 ?>
+              <small>
+                Member since <?php echo $joined; ?></small>
             </p>
           </li>
 

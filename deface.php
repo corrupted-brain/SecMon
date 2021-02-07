@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Defacement Detection</title>
-</head>
-<body>
+
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
 $connection = mysqli_connect("localhost","root","","hash_analyzer");
 /*$urls=array('tcioe.edu.np/4u.html',
 			'192.168.1.1',
@@ -61,7 +58,5 @@ function callURL($url){
 		}
 		$query_run = mysqli_query($connection,$query);
 	}
+	echo "{\"Check\":\"Mate\"}";
 	?>
-
-</body>
-</html>

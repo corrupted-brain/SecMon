@@ -15,6 +15,17 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
+  <style type="text/css">
+body {
+  font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #fff;
+}
+
+  </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -32,7 +43,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Website Monitoring</h1>
+            <h1>IP Address Monitoring</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -40,8 +51,6 @@
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-
 
         <!-- /.row -->
         <div class="row">
@@ -51,54 +60,20 @@
                 <h3 class="card-title"></h3>
                 <div class="card-body">
 
-                <?php
-                $connection= mysqli_connect("localhost","root","","hash_analyzer");
-                $query= "SELECT * FROM Deface";
-                $query_run= mysqli_query($connection,$query);
-                ?>
 
-
-                <table id="example2" class="table table-bordered table-striped">
+                <table id="table_id" class="table table-bordered table-striped" style="width:100%">
                   <thead>
                   <tr>
+                    <th>ID</th>
                     <th>Website</th>
                     <th>Status</th>
                     <th>Description</th>
                     <th>Date</th>
                   </tr>
                   </thead>
-                  <tbody>
-                    <?php
-                    if(mysqli_num_rows($query_run)> 0)
-                    {
-                      while($row = mysqli_fetch_assoc($query_run))
-                      {
-                       ?>
-                  <tr>
-                    <td> <?php echo $row['website'];?> </td>
-                    <?php $status=$row['status'];
-
-                     if($status=='fine'){
-         echo "<td class='table-success'>"."Website is fine."."</td>"; }
-        else
-   
-         echo "<td class='table-danger'>"."Website might be defaced."."</td>";; 
-
-                    ?>
-                    <td> <?php echo $row['remark'];?> </td>
-                    <td> <?php echo $row['date'];?> </td>
-                  </tr>
-                  <?php
-
-                      }
-                    }
-                    else {
-                      echo "No record found!";
-                    }
-                    ?>
-                  </tbody>
                   <tfoot>
                   <tr>
+                    <th>ID</th>
                     <th>Website</th>
                     <th>Status</th>
                     <th>Description</th>
@@ -109,8 +84,6 @@
               </div>
             </div>
                 
-
-
               </div>
 
 
@@ -121,10 +94,11 @@
         </div>
 
         <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
-
+</div>
   <!-- /.content-wrapper -->
 <?php include 'themepart/footer.php'; ?>
 
@@ -133,10 +107,10 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
+</div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
+
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
@@ -167,16 +141,52 @@
 <script src="plugins/raphael/raphael.min.js"></script>
 <script src="plugins/jquery-mapael/jquery.mapael.min.js"></script>
 <script src="plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<script>
-  $(document).ready(function () {
-  function reload() {
-    $("#content").load("deface.php");
-  }
-  setTimeOut(reload, seconds*1000)
-}
-</script>
 
-</body>
+<!-- PAGE SCRIPTS -->
+<script src="dist/js/pages/dashboard3.js"></script>
+ <script type="text/javascript">
+    setInterval(
+      function(){
+        $.getJSON("deface.php",function(e){
+          document.getElementById("check").innerHTML=e.Check;
+        })
+        $('#table_id').DataTable().ajax.reload();
+      },60000); //60000 Millisecond = 1 minute
+  </script>
+
+<script type="text/javascript">
+      $('#table_id').DataTable({
+        "language": {
+          "infoEmpty": "No records available.",
+        },
+        "paging": true,
+        "processing": true,
+        //"serverSide": true,
+        ajax: {
+          url: 'DefaceStatus/api/index.php',
+          dataSrc: 'DEFACEstatus',
+        },
+        columns: [
+          { data: 'id' },
+          { data: 'website' },
+          { data: 'status' },
+          { data: 'remark' },
+          { data: 'date' }
+          ],
+        columnDefs: [{targets: 2,
+                    render: function ( data, type, row ) {
+                      var color = 'black';
+                      if (data == 'fine') {
+                        color = 'green';
+                      } 
+                      if (data == 'defaced') {
+                        color = 'red';
+                      }
+                      return '<span style="color:' + color + '">' + data + '</span>';
+                    }
+               }],
+        responsive: true,
+        });
+      </script>
+    </body>
 </html>
