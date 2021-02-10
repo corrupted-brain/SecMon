@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 07, 2021 at 08:50 PM
+-- Generation Time: Feb 08, 2021 at 08:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -169,7 +169,118 @@ INSERT INTO `Deface` (`id`, `website`, `status`, `remark`, `date`) VALUES
 (127, 'eminenceways.com', 'fine', 'Office Site', '2021-02-07 16:34:05'),
 (128, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-07 19:48:42'),
 (129, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-07 19:48:50'),
-(130, 'eminenceways.com', 'fine', 'Office Site', '2021-02-07 19:48:53');
+(130, 'eminenceways.com', 'fine', 'Office Site', '2021-02-07 19:48:53'),
+(131, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:38:36'),
+(132, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:38:48'),
+(133, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:39:06'),
+(134, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:41:18'),
+(135, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:41:25'),
+(136, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:41:28'),
+(137, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:41:32'),
+(138, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:42:18'),
+(139, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:42:36'),
+(140, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:42:39'),
+(141, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:42:42'),
+(142, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:43:17'),
+(143, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:43:25'),
+(144, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:43:29'),
+(145, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:43:31'),
+(146, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:44:18'),
+(147, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:44:32'),
+(148, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:44:35'),
+(149, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:44:39'),
+(150, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:45:19'),
+(151, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:45:26'),
+(152, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:45:33'),
+(153, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:45:37'),
+(154, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:46:17'),
+(155, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:46:26'),
+(156, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:46:29'),
+(157, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:46:32'),
+(158, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:47:17'),
+(159, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:47:29'),
+(160, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:47:32'),
+(161, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:47:35'),
+(162, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:48:21'),
+(163, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:48:29'),
+(164, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:48:32'),
+(165, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:48:34'),
+(166, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:49:22'),
+(167, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:49:37'),
+(168, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:49:40'),
+(169, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:49:42'),
+(170, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:50:18'),
+(171, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:50:33'),
+(172, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:50:37'),
+(173, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:50:40'),
+(174, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:51:23'),
+(175, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:51:31'),
+(176, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:51:34'),
+(177, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:51:37'),
+(178, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:52:18'),
+(179, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:52:25'),
+(180, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:52:33'),
+(181, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:52:35'),
+(182, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:53:19'),
+(183, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:53:28'),
+(184, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:53:32'),
+(185, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:53:35'),
+(186, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:54:18'),
+(187, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:54:26'),
+(188, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:54:29'),
+(189, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:54:37'),
+(190, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:55:18'),
+(191, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:55:24'),
+(192, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:55:27'),
+(193, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:55:30'),
+(194, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:56:23'),
+(195, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:56:33'),
+(196, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:56:37'),
+(197, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:56:40'),
+(198, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:57:19'),
+(199, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:57:29'),
+(200, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:57:31'),
+(201, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:57:34'),
+(202, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:58:18'),
+(203, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:58:26'),
+(204, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:58:29'),
+(205, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:58:32'),
+(206, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 05:59:18'),
+(207, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 05:59:26'),
+(208, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 05:59:29'),
+(209, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 05:59:33'),
+(210, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:00:18'),
+(211, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:00:26'),
+(212, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:00:30'),
+(213, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:00:34'),
+(214, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:01:19'),
+(215, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:01:28'),
+(216, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:01:31'),
+(217, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:01:34'),
+(218, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:02:18'),
+(219, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:02:28'),
+(220, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:02:31'),
+(221, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:02:34'),
+(222, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:03:22'),
+(223, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:03:30'),
+(224, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:03:33'),
+(225, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:03:36'),
+(226, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:04:17'),
+(227, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:04:27'),
+(228, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:04:30'),
+(229, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:04:35'),
+(230, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:05:19'),
+(231, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:05:26'),
+(232, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:05:29'),
+(233, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:05:32'),
+(234, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:06:18'),
+(235, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:06:25'),
+(236, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:06:28'),
+(237, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:06:31'),
+(238, 'tcioe.edu.np/4u.html', 'defaced', 'Thapathali Campus', '2021-02-08 06:07:18'),
+(239, 'exploitway.com', 'defaced', 'Exploitway', '2021-02-08 06:07:28'),
+(240, 'eminenceways.com', 'fine', 'Office Site', '2021-02-08 06:07:31'),
+(241, 'smaranchand.com.np', 'fine', 'Websitw', '2021-02-08 06:07:36');
 
 -- --------------------------------------------------------
 
@@ -192,7 +303,8 @@ CREATE TABLE `deface_config` (
 INSERT INTO `deface_config` (`id`, `website`, `description`, `email`, `contact`) VALUES
 (1, 'tcioe.edu.np/4u.html', 'Thapathali Campus', 'info@tcioe.edu.np', 'contact'),
 (2, 'exploitway.com', 'Exploitway', 'admin@exploitway.com', 'contact'),
-(3, 'eminenceways.com', 'Office Site', 'info@eminenceways.com', 'contact');
+(3, 'eminenceways.com', 'Office Site', 'info@eminenceways.com', 'contact'),
+(4, 'smaranchand.com.np', 'Websitw', 'test@test.com', 'contact');
 
 -- --------------------------------------------------------
 
@@ -213,7 +325,7 @@ CREATE TABLE `filescan_config` (
 --
 
 INSERT INTO `filescan_config` (`id`, `account`, `scan_path`, `email`, `file_extensions`) VALUES
-(1, ' kailash  1', ' /home/Desktop/College/   ', 'kailashbohara0x00@gmail.com', '     *     ');
+(1, '  kailash  ', '/home/kailash/Desktop/college', 'kailashbohara0x00@gmail.com', '  *        ');
 
 -- --------------------------------------------------------
 
@@ -236,19 +348,48 @@ CREATE TABLE `file_history` (
 --
 
 INSERT INTO `file_history` (`time_stamp`, `status`, `file_path`, `old_hash`, `new_hash`, `file_last_mod`, `acct`) VALUES
-('2021-01-31 04:56:49', 'Deleted', '/home/kailash/Desktop/college/papers/SoICT-Paper-87-XuanDauHoang.pdf', 'c515ea2e05e6d123bf699ca73f80985844608953', 'Not Applicable', '2020-03-02 18:18:00', 'Kailash'),
-('2021-01-31 04:56:49', 'Altered', '/home/kailash/Desktop/college/index.html', '64d1f4138f8706a5a3bb5dc3055663c55722c365', 'd6f676b7d5925a7e7a0fd504b3a9a78786c9ec9d', '2021-01-31 16:56:39', 'Kailash'),
-('2021-01-31 04:56:48', 'Altered', '/home/kailash/Desktop/college/papers', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '2021-01-31 16:56:18', 'Kailash'),
-('2021-01-31 04:55:58', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-31 04:55:58', 'Altered', '/home/kailash/Desktop/college/FYP proposal .docx', '62cef8d907707f16be90955598e013c55d7c5e56', 'a2c113207c102942ac85f0ef9e10e57752c7366c', '2021-01-31 16:55:11', 'Kailash'),
-('2021-01-31 04:53:55', 'Altered', '/home/kailash/Desktop/college/inclusion.txt', '23b9c492edd4b9818f6f1c8c5075324d772809e7', 'a074e12c2226e8cc79c2cd3838a03c9fb16dab3b', '2021-01-28 18:14:25', 'Kailash'),
-('2021-01-26 12:37:57', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:57', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:56', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash'),
-('2021-01-26 12:37:56', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', 'Kailash');
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:22:12', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:23:03', 'Edited', '/home/kailash/Desktop/college/inclusion.txt', 'f2670cfbf94eb22c7a2ba633755581cbf97f31b5', 'cfaa4bab7d1136930f56deca19e09415fe3dde0f', '2021-02-08 17:22:55', '  kailash  '),
+('2021-02-08 05:28:23', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:32:20', 'Unchanged', 'No changes in files found.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:40:43', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:47:29', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:49:10', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:49:10', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:49:10', 'Deleted', '/home/kailash/Desktop/college/papers', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Not Applicable', '2021-01-31 16:56:18', '  kailash  '),
+('2021-02-08 05:52:11', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:53:33', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 05:54:03', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:26:50', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:27:10', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:41:15', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:42:12', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:42:39', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 06:44:55', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:05:41', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:11:58', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:21:22', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:22:22', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:23:22', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:25:08', 'Added', 'FIRST SCAN', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:26:08', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:27:08', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:28:58', 'Deleted', '/home/kailash/Desktop/college/nepal.svg', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 'Not Applicable', '2021-02-08 19:24:42', '  kailash  '),
+('2021-02-08 07:29:59', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:30:59', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:31:59', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:33:27', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:34:27', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:35:27', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:36:27', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  '),
+('2021-02-08 07:37:27', 'Unchanged', 'No changes in files.\r\n', 'Not Applicable', 'Not Applicable', 'Not Applicable', '  kailash  ');
 
 -- --------------------------------------------------------
 
@@ -268,15 +409,15 @@ CREATE TABLE `file_scan_log` (
 --
 
 INSERT INTO `file_scan_log` (`file_path`, `file_hash`, `file_last_mod`, `acct`) VALUES
-('/home/kailash/Desktop/college/Presentation-for-FYP.pptx', 'b0317cbe2defd9c28e2524554443a5b086e9cd29', '2020-03-10 03:36:26', 'Kailash'),
-('/home/kailash/Desktop/college/FYP proposal .docx', 'a2c113207c102942ac85f0ef9e10e57752c7366c', '2021-01-31 16:55:11', 'Kailash'),
-('/home/kailash/Desktop/college/papers/WebsiteDefacementIJCSIS.pdf', '124815570022b443447417ea19d1f4d330d6544e', '2020-03-02 18:17:12', 'Kailash'),
-('/home/kailash/Desktop/college/papers/electronics-08-01338.pdf', 'af54c402331998d1f0abbb7c426f3406d3cb69ce', '2020-03-02 18:15:22', 'Kailash'),
-('/home/kailash/Desktop/college/papers/computers-08-00035.pdf', '33eef2962c34f5a2ef32557caa9b9a5a2970cd90', '2020-03-02 18:13:36', 'Kailash'),
-('/home/kailash/Desktop/college/inclusion.txt', 'a074e12c2226e8cc79c2cd3838a03c9fb16dab3b', '2021-01-28 18:14:25', 'Kailash'),
-('/home/kailash/Desktop/college/FULLTEXT01.pdf', 'bb82a633d4b84e39296fcb6c7cf214dd0f5bc5e5', '2020-12-01 08:55:43', 'Kailash'),
-('/home/kailash/Desktop/college/papers', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '2021-01-31 16:56:18', 'Kailash'),
-('/home/kailash/Desktop/college/index.html', 'd6f676b7d5925a7e7a0fd504b3a9a78786c9ec9d', '2021-01-31 16:56:39', 'Kailash');
+('/home/kailash/Desktop/college/demo.jsp', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', '2021-02-08 17:53:21', '  kailash  '),
+('/home/kailash/Desktop/college/papers/WebsiteDefacementIJCSIS.pdf', '124815570022b443447417ea19d1f4d330d6544e', '2020-03-02 18:17:12', '  kailash  '),
+('/home/kailash/Desktop/college/papers/electronics-08-01338.pdf', 'af54c402331998d1f0abbb7c426f3406d3cb69ce', '2020-03-02 18:15:22', '  kailash  '),
+('/home/kailash/Desktop/college/papers/computers-08-00035.pdf', '33eef2962c34f5a2ef32557caa9b9a5a2970cd90', '2020-03-02 18:13:36', '  kailash  '),
+('/home/kailash/Desktop/college/FYP proposal .docx', 'a2c113207c102942ac85f0ef9e10e57752c7366c', '2021-01-31 16:55:11', '  kailash  '),
+('/home/kailash/Desktop/college/inclusion.txt', 'cfaa4bab7d1136930f56deca19e09415fe3dde0f', '2021-02-08 17:22:55', '  kailash  '),
+('/home/kailash/Desktop/college/index.html', 'bbb35887a2a5a9a56db35b9d3aa073defe38b1d2', '2021-02-08 17:17:31', '  kailash  '),
+('/home/kailash/Desktop/college/Presentation-for-FYP.pptx', 'b0317cbe2defd9c28e2524554443a5b086e9cd29', '2020-03-10 03:36:26', '  kailash  '),
+('/home/kailash/Desktop/college/main.js', 'e45132d40c516749d7fe1942264e92fc430b8876', '2021-02-08 17:48:59', '  kailash  ');
 
 -- --------------------------------------------------------
 
@@ -352,10 +493,12 @@ CREATE TABLE `scan_log` (
 --
 
 INSERT INTO `scan_log` (`scan_time`, `found_changes`, `acct`) VALUES
-('2021-01-31 04:56:49', 3, 'Kailash'),
-('2021-01-31 04:55:58', 2, 'Kailash'),
-('2021-01-31 04:53:55', 1, 'Kailash'),
-('2021-01-26 12:37:56', 1, 'Kailash');
+('2021-02-08 05:22:12', 8, '  kailash  '),
+('2021-02-08 05:23:03', 1, '  kailash  '),
+('2021-02-08 05:49:10', 2, '  kailash  '),
+('2021-02-08 05:53:33', 1, '  kailash  '),
+('2021-02-08 07:25:08', 1, '  kailash  '),
+('2021-02-08 07:28:58', 1, '  kailash  ');
 
 -- --------------------------------------------------------
 
@@ -471,13 +614,13 @@ ALTER TABLE `virus`
 -- AUTO_INCREMENT for table `Deface`
 --
 ALTER TABLE `Deface`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=242;
 
 --
 -- AUTO_INCREMENT for table `deface_config`
 --
 ALTER TABLE `deface_config`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `filescan_config`
@@ -489,7 +632,7 @@ ALTER TABLE `filescan_config`
 -- AUTO_INCREMENT for table `IPstatus`
 --
 ALTER TABLE `IPstatus`
-  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2849;
+  MODIFY `id` smallint(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2858;
 
 --
 -- AUTO_INCREMENT for table `IPstatus_config`

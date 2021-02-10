@@ -243,8 +243,8 @@
     <!-- PAGE SCRIPTS -->
     <script src="dist/js/pages/dashboard2.js"></script>
     <script type="text/javascript">
-   a setInterval(function() {
-      $.getJSON("IPstatus/check.php", function(e) {
+     setInterval(function() {
+      $.getJSON("scanner.php", function(e) {
         document.getElementById("check").innerHTML = e.Check;
       })
       $('#table_id').DataTable().ajax.reload();
@@ -288,7 +288,7 @@
                       if (data == 'Unchanged') {
                         color = 'green';
                       } 
-                      if (data == 'Altered') {
+                      if (data == 'Edited') {
                         color = '#ff4d4d';
                       }
                       if (data == 'Deleted') {
