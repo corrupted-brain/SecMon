@@ -64,12 +64,12 @@ if ($baseline_results)
 	
 }
 
-//Scan directories and generate hash values for current files
+//Scan directories and generate hash values for all files
 $dir = new RecursiveDirectoryIterator(SCAN_PATH);
 $iter = new RecursiveIteratorIterator($dir);
 while ($iter->valid())
 {
-	//skip directories with dot and probhited directories
+	//skip directories with dot and excluded directories
 	if (!$iter->isDot() && !(in_array($iter->getSubPath(), $skip)))
 	{
 		//	Get or set file extension ('' vs null)

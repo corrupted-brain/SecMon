@@ -166,7 +166,6 @@
                     <th>Modified hash</th>
                     <th>old hash</th>
                     <th>Modified Time</th>
-                    <th>User</th>
                   </tr>
                   </thead>
                   <tfoot>
@@ -176,7 +175,6 @@
                     <th>Modified hash</th>
                     <th>old hash</th>
                     <th>Modified Time</th>
-                    <th>User</th>
                   </tr>
                   </tfoot>
                     </table>
@@ -270,16 +268,15 @@
           { data: 'file_path' },
           { data: 'new_hash' },
           { data: 'old_hash' },
-          { data: 'file_last_mod' },
-          { data: 'acct' }
+          { data: 'file_last_mod' }
           ],
         "columnDefs": [
 
                 { 
-                  responsivePriority: 1, targets: 5
+                  responsivePriority: 1, targets: 4
                   },
                 { 
-                  responsivePriority: 2, targets: 4
+                  responsivePriority: 2, targets: 3
                   },
                   {
                     targets: 0,
